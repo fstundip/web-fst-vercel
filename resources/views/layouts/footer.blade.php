@@ -46,7 +46,7 @@
                 <div class="row align-items-center mt-4">
                     <div class="col-md-12 mt-3 text-center small">
                         <hr>
-                        Copyright © Forum Studi Teknik Universitas Diponegoro | 2024
+                        Copyright © Forum Studi Teknik Universitas Diponegoro | 2025
                     </div>
                 </div>
             </div>

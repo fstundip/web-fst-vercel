@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardPagesController;
 use App\Http\Controllers\DashboardBidangController;
+use App\Http\Controllers\DashboardAnggotaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,12 +48,12 @@ Route::get('/prestasi', function () {
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/admin/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/admin/login', [LoginController::class, 'authenticate']);
+Route::post('/admin/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/admin/register', [RegisterController::class, 'index']);
+Route::post('/admin/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
@@ -61,7 +61,11 @@ Route::get('/dashboard', function () {
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/pages', DashboardPagesController::class)->middleware('auth');
-Route::resource('/dashboard/bidang-kabinet', DashboardBidangController::class)->middleware('auth');
+Route::resource('/dashboard/bidang-kabinet', DashboardBidangController::class)
+    ->parameters([
+        'bidang-kabinet' => 'bidang'
+    ])->middleware('auth');
+Route::resource('/dashboard/anggota-kabinet', DashboardAnggotaController::class)->middleware('auth');
 Route::get('/dashboard/posts/checkSlug/{title?}', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 
 Route::get('/pages/{pages:slug}', [PageController::class, 'index']);
@@ -81,8 +85,6 @@ Route::get('/pages/bidang-kabinet/{bidang:slug}', function (Bidang $bidang) {
         'bidang' => $bidang->name
     ]);
 });
-
-Route::put('/dashboard/bidang-kabinet/{anggota:id}', 'DashboardBidangController@update');
 
 
 

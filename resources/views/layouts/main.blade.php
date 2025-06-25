@@ -74,7 +74,7 @@
                                         <div class="col-lg-6 nav-col">
                                             <h6 class="dropdown-header text-success">BIDANG KABINET FST UNDIP
                                             </h6>
-                                            <a href="/" class="dropdown-item fw-normal">PH</a>
+                                            <a href="/" class="dropdown-item fw-normal">Pengurus Harian</a>
                                             <a href="/" class="dropdown-item fw-normal">Edukasi</a>
                                             <a href="/" class="dropdown-item fw-normal">Riset</a>
                                             <a href="/" class="dropdown-item fw-normal">Media

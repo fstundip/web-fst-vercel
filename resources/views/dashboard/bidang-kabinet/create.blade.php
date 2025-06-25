@@ -4,7 +4,7 @@
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <!-- CONTENT -->
-    <h1 class="fw-bold">Create New Anggota</h1>
+    <h1 class="fw-bold">Create New Bidang</h1>
     <!-- ENDCONTENT -->
 
     <!-- SIDEBAR -->
@@ -39,26 +39,6 @@
         <div class="mb-3">
             <label for="slug" class="form-label">Slug</label>
             <input type="text" class="form-control" id="slug" name="slug" required>
-        </div>
-        <div class="mb-3">
-            <label for="jabatan" class="form-label">Jabatan</label>
-            <input type="text" class="form-control" id="jabatan" name="jabatan" required>
-        </div>
-        <div class="mb-3">
-            <label for="bidang" class="form-label">Bidang</label>
-            <select class="form-select" name="bidang_id">
-                @foreach($bidang as $bidang)
-                <option value="{{$bidang->id}}">{{$bidang->name}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="jurusan" class="form-label">Jurusan</label>
-            <input class="form-control" id="jurusan" name="jurusan" required></input>
-        </div>
-        <div class="mb-3">
-            <label for="image" class="form-label">Post Image</label>
-            <input class="form-control" type="file" id="image" name="image">
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>

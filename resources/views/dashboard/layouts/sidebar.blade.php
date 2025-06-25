@@ -36,7 +36,7 @@
                         <svg class="bi">
                             <use xlink:href="#file-earmark" />
                         </svg>
-                        My Posts
+                        Posts
                     </a>
                 </li>
                 <li class="nav-item">
@@ -45,7 +45,16 @@
                         <svg class="bi">
                             <use xlink:href="#file-earmark" />
                         </svg>
-                        My Pages
+                        Pages
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/pages') ? 'active' : ''}}"
+                        href="/dashboard/anggota-kabinet">
+                        <svg class="bi">
+                            <use xlink:href="#file-earmark" />
+                        </svg>
+                        Anggotas
                     </a>
                 </li>
                 <li class="nav-item">
@@ -54,7 +63,7 @@
                         <svg class="bi">
                             <use xlink:href="#file-earmark" />
                         </svg>
-                        Bidang
+                        Bidangs
                     </a>
                 </li>
             </ul>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Anggota;
 use App\Models\Bidang;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +17,7 @@ class DashboardBidangController extends Controller
     public function index()
     {
         return view('dashboard.bidang-kabinet.index', [
-            'anggota' => Anggota::all()
+            'bidang' => Bidang::all()
         ]);
     }
 
@@ -27,9 +26,7 @@ class DashboardBidangController extends Controller
      */
     public function create()
     {
-        return view('dashboard.bidang-kabinet.create', [
-            'bidang' => Bidang::all()
-        ]);
+        return view('dashboard.bidang-kabinet.create');
     }
 
     /**
@@ -37,29 +34,18 @@ class DashboardBidangController extends Controller
      */
     public function store(Request $request)
     {
-        ddd($request);
         $request->validate([
             'name' => 'required|max:255',
-            'bidang_id' => 'required',
-            'slug' => 'required|unique:anggotas',
-            'image' => 'image|file|max:3000',
-            'jabatan' => 'required',
-            'jurusan' => 'required'
+            'slug' => 'required|unique:bidangs',
         ]);
 
-        $imagePath = $request->file('image')->store('post-images', 'public');
-
-        $bidangKabinet = new Anggota;
+        $bidangKabinet = new Bidang;
         $bidangKabinet->name = $request->input('name');
         $bidangKabinet->slug = $request->input('slug');
-        $bidangKabinet->jabatan = $request->input('jabatan');
-        $bidangKabinet->bidang_id = $request->input('bidang_id');
-        $bidangKabinet->jurusan = $request->input('jurusan');
-        $bidangKabinet->image = $imagePath; // Menyimpan path file gambar ke dalam kolom 'image'
         $bidangKabinet->save();
 
 
-        return redirect('dashboard/bidang-kabinet')->with('success', 'New post has been added!');
+        return redirect('dashboard/bidang-kabinet')->with('success', 'New bidang has been added!');
     }
 
     /**
@@ -67,9 +53,9 @@ class DashboardBidangController extends Controller
      */
     public function show($id)
     {
-        $anggota = Anggota::findOrFail($id);
+        $bidang = Bidang::findOrFail($id);
         return view('dashboard.bidang-kabinet.show', [
-            'anggota' => $anggota
+            'bidang' => $bidang
         ]);
     }
 
@@ -78,41 +64,30 @@ class DashboardBidangController extends Controller
      */
     public function edit($id)
     {
-        $anggota = Anggota::findOrFail($id);
+        $bidang = Bidang::findOrFail($id);
         return view('dashboard.bidang-kabinet.edit', [
-            'anggota' => $anggota,
-            'bidang' => Bidang::all()
+            'bidang' => $bidang
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Anggota $anggota)
+    public function update(Request $request, Bidang $bidang)
     {
         $rules = [
             'name' => 'required|max:255',
-            'jabatan' => 'required',
-            'bidang_id' => 'required',
-            'jurusan' => 'required',
-            'image' => 'image|file|max:8000'
         ];
 
-        if ($request->slug != $anggota->slug) {
-            $rules['slug'] = 'required|unique:anggotas';
+        if ($request->slug != $bidang->slug) {
+            $rules['slug'] = 'required|unique:bidangs';
         }
 
         $validatedData = $request->validate($rules);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
-        }
+        $bidang->update($validatedData);
 
-        $validatedData['bidang_id'] = auth()->user()->id;
-
-        $anggota->update($validatedData);
-
-        $message = "Anggota has been updated successfully!";
+        $message = "Bidang has been updated successfully!";
 
         return redirect('dashboard/bidang-kabinet')->with('success', $message);
     }
@@ -122,12 +97,12 @@ class DashboardBidangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id, Anggota $anggota)
+    public function destroy($id)
     {
-        $anggota = Anggota::findOrFail($id);
-        $anggota->delete();
+        $bidang = Bidang::findOrFail($id);
+        $bidang->delete();
 
-        $messages = 'Page has been deleted!';
+        $messages = 'Bidang has been deleted!';
 
         return redirect('dashboard/bidang-kabinet')->with('success', $messages);
     }
