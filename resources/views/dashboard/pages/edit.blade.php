@@ -4,7 +4,7 @@
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <!-- CONTENT -->
-    <h1 class="fw-bold">Edit Pages</h1>
+    <h1 class="fw-bold">Edit Page</h1>
     <!-- ENDCONTENT -->
 
     <!-- SIDEBAR -->
@@ -30,22 +30,20 @@
     <!-- SIDEBAR END -->
 </div>
 <div class="card p-4 border-0 shadow-sm">
-    <form method="post" action="/dashboard/pages/{{$pages->id}}" enctype="multipart/form-data">
-        @method('put')
+    <form method="post" action="/dashboard/pages/{{$page->id}}" enctype="multipart/form-data">
         @csrf
+        @method('put')
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title" required autofocus
-                value="{{$pages->title}}">
+            <input type="text" class="form-control" id="title" name="title" required value="{{ old('title', $page->title) }}">
         </div>
         <div class="mb-3">
             <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control" id="slug" name="slug" required value="{{$pages->slug}}">
+            <input type="text" class="form-control" id="slug" name="slug" required value="{{ old('slug', $page->slug) }}">
         </div>
         <div class="mb-3">
             <label for="body" class="form-label">Body</label>
-            <textarea class="form-control" id="summernote" name="body"
-                required>{{ old('body', $pages->body) }}</textarea>
+            <textarea class="form-control" id="summernote" name="body" required>{{ old('body', $page->body) }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

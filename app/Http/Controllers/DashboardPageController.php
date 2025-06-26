@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pages;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardPageController extends Controller
 {
@@ -14,7 +15,7 @@ class DashboardPageController extends Controller
     public function index()
     {
         return view('dashboard.pages.index', [
-            'pages' => Pages::all()
+            'page' => Page::all()
         ]);
     }
 
@@ -31,21 +32,17 @@ class DashboardPageController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
-            'image' => 'image|file|max:1024',
             'body' => 'required'
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
-        }
-
-        $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body, 200));
-
-        Pages::create($validatedData);
+        $page = new Page;
+        $page->title = $request->input('title');
+        $page->slug = $request->input('slug');
+        $page->body = $request->input('body');
+        $page->save();
 
         return redirect('dashboard/pages')->with('success', 'New post has been added!');
     }
@@ -55,10 +52,10 @@ class DashboardPageController extends Controller
      */
     public function show($id)
     {
-        $page = Pages::findOrFail($id);
+        $page = Page::findOrFail($id);
 
         return view('dashboard.pages.show', [
-            'pages' => $page
+            'page' => $page
         ]);
     }
 
@@ -67,29 +64,32 @@ class DashboardPageController extends Controller
      */
     public function edit($id)
     {
-        $page = Pages::findOrFail($id);
+        $page = Page::findOrFail($id);
         return view('dashboard.pages.edit', [
-            'pages' => $page
+            'page' => $page
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pages $pages)
+    public function update(Request $request, $id)
     {
-
-        $validatedData = $request->validate([
+        $page = Page::findOrFail($id);
+        $rules = [
             'title' => 'required|max:255',
-            'slug' => 'required|unique:pages,slug,' . $pages->id,
-            'body' => 'required'
-        ]);
+            'body' => 'required',
+        ];
 
-        $pages->fill($validatedData);
-        $pages->save();
+        if ($request->slug != $page->slug) {
+            $rules['slug'] = 'required|unique:pages';
+        }
 
-        $messages = "Page has been edited!";
-        return redirect('dashboard/pages')->with('success', $messages);
+        $validatedData = $request->validate($rules);
+
+        $page->update($validatedData);
+
+        return redirect('dashboard/pages')->with('success', 'Page has been updated!');
     }
 
     /**
@@ -97,7 +97,7 @@ class DashboardPageController extends Controller
      */
     public function destroy($id)
     {
-        $page = Pages::findOrFail($id);
+        $page = Page::findOrFail($id);
         $page->delete();
 
         $messages = 'Page has been deleted!';

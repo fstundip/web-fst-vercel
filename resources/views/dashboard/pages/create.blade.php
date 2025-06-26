@@ -4,7 +4,7 @@
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <!-- CONTENT -->
-    <h1 class="fw-bold">Create New Pages</h1>
+    <h1 class="fw-bold">Create New Page</h1>
     <!-- ENDCONTENT -->
 
     <!-- SIDEBAR -->
@@ -39,10 +39,6 @@
         <div class="mb-3">
             <label for="slug" class="form-label">Slug</label>
             <input type="text" class="form-control" id="slug" name="slug" required>
-        </div>
-        <div class="mb-3">
-            <label for="image" class="form-label">Post Image</label>
-            <input class="form-control" type="file" id="image" name="image">
         </div>
         <div class="mb-3">
             <label for="body" class="form-label">Body</label>
