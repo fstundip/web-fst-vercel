@@ -41,8 +41,9 @@
             <input type="text" class="form-control" id="slug" name="slug" readonly>
         </div>
         <div class="mb-3">
-            <label for="category" class="form-label">Category</label>
+            <label for="category" class="form-label"></label>
             <select class="form-select" name="category_id">
+                <option value="" selected disabled>-- Pilih Category --</option>
                 @foreach($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach

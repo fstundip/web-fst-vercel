@@ -75,6 +75,33 @@
                         Bidangs
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/jabatan-kabinet') ? 'active' : ''}}"
+                        href="/dashboard/jabatan-kabinet">
+                        <svg class="bi">
+                            <use xlink:href="#file-earmark" />
+                        </svg>
+                        Jabatans
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/jurusan-kabinet') ? 'active' : ''}}"
+                        href="/dashboard/jurusan-kabinet">
+                        <svg class="bi">
+                            <use xlink:href="#file-earmark" />
+                        </svg>
+                        Jurusans
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/angkatan-kabinet') ? 'active' : ''}}"
+                        href="/dashboard/angkatan-kabinet">
+                        <svg class="bi">
+                            <use xlink:href="#file-earmark" />
+                        </svg>
+                        Angkatans
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

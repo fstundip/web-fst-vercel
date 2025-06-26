@@ -10,15 +10,9 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('anggotas', function (Blueprint $table) {
+        Schema::create('angkatans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('bidang_id');
-            $table->string('name');
-            $table->string('slug');
-            $table->text('jurusan');
-            $table->string('image');
-            $table->text('jabatan');
-            $table->timestamp('published_at')->nullable();
+            $table->integer('tahun');
             $table->timestamps();
         });
     }
@@ -28,6 +22,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('anggotas');
+        Schema::dropIfExists('angkatans');
     }
 };

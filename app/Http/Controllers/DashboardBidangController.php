@@ -39,10 +39,10 @@ class DashboardBidangController extends Controller
             'slug' => 'required|unique:bidangs',
         ]);
 
-        $bidangKabinet = new Bidang;
-        $bidangKabinet->name = $request->input('name');
-        $bidangKabinet->slug = $request->input('slug');
-        $bidangKabinet->save();
+        $bidang = new Bidang;
+        $bidang->name = $request->input('name');
+        $bidang->slug = $request->input('slug');
+        $bidang->save();
 
 
         return redirect('dashboard/bidang-kabinet')->with('success', 'New bidang has been added!');

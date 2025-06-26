@@ -13,4 +13,16 @@ class Anggota extends Model
     {
         return $this->belongsTo(Bidang::class);
     }
+    public function jabatan()
+    {
+        return $this->belongsTo(Jabatan::class);
+    }
+    public function angkatan()
+    {
+        return $this->belongsTo(Angkatan::class);
+    }
+    public function jurusan()
+    {
+        return $this->belongsTo(Jurusan::class);
+    }
 }

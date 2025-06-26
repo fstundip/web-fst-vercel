@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Anggota;
 use App\Models\Bidang;
+use App\Models\Jabatan;
+use App\Models\Jurusan;
+use App\Models\Angkatan;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,7 +31,10 @@ class DashboardAnggotaController extends Controller
     public function create()
     {
         return view('dashboard.anggota-kabinet.create', [
-            'bidang' => Bidang::all()
+            'bidang' => Bidang::all(),
+            'jabatan' => Jabatan::all(),
+            'jurusan' => Jurusan::all(),
+            'angkatan' => Angkatan::all()
         ]);
     }
 
@@ -40,10 +46,10 @@ class DashboardAnggotaController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'bidang_id' => 'required',
-            'slug' => 'required|unique:anggotas',
             'image' => 'image|file|max:10000|mimes:jpeg,png,jpg',
-            'jabatan' => 'required',
-            'jurusan' => 'required'
+            'jabatan_id' => 'required',
+            'jurusan_id' => 'required',
+            'angkatan_id' => 'required'
         ]);
 
         $image = $request->file('image');
@@ -51,10 +57,10 @@ class DashboardAnggotaController extends Controller
 
         Anggota::create([
             'name' => $request->name,
-            'slug' => $request->slug,
-            'jabatan' => $request->jabatan,
+            'jabatan_id' => $request->jabatan_id,
             'bidang_id' => $request->bidang_id,
-            'jurusan' => $request->jurusan,
+            'jurusan_id' => $request->jurusan_id,
+            'angkatan_id' => $request->angkatan_id,
             'image' => 'anggota-images/' . $image->hashName(), 
         ]);
 
@@ -80,7 +86,10 @@ class DashboardAnggotaController extends Controller
         $anggota = Anggota::findOrFail($id);
         return view('dashboard.anggota-kabinet.edit', [
             'anggota' => $anggota,
-            'bidang' => Bidang::all()
+            'bidang' => Bidang::all(),
+            'jabatan' => Jabatan::all(),
+            'jurusan' => Jurusan::all(),
+            'angkatan' => Angkatan::all(),
         ]);
     }
 
@@ -94,14 +103,11 @@ class DashboardAnggotaController extends Controller
         $rules = [
             'name' => 'required|max:255',
             'bidang_id' => 'required',
-            'jabatan' => 'required',
-            'jurusan' => 'required',
+            'jabatan_id' => 'required',
+            'jurusan_id' => 'required',
+            'angkatan_id' => 'required',
             'image' => 'image|file|max:10000|mimes:jpeg,png,jpg',
         ];
-
-        if ($request->slug != $anggota->slug) {
-            $rules['slug'] = 'required|unique:anggotas';
-        }
 
         $validatedData = $request->validate($rules);
 

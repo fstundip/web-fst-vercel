@@ -14,6 +14,9 @@ use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardPageController;
 use App\Http\Controllers\DashboardAnggotaController;
 use App\Http\Controllers\DashboardBidangController;
+use App\Http\Controllers\DashboardJabatanController;
+use App\Http\Controllers\DashboardJurusanController;
+use App\Http\Controllers\DashboardAngkatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +52,7 @@ Route::get('/prestasi', function () {
     ]);
 });
 
-Route::get('/admin/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/admin/login', [LoginController::class, 'index']);
 Route::post('/admin/login', [LoginController::class, 'authenticate']);
 Route::post('/admin/logout', [LoginController::class, 'logout']);
 
@@ -64,6 +67,9 @@ Route::resource('/dashboard/categories', DashboardCategoryController::class)->mi
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/pages', DashboardPageController::class)->middleware('auth');
 Route::resource('/dashboard/bidang-kabinet', DashboardBidangController::class)->middleware('auth');
+Route::resource('/dashboard/jabatan-kabinet', DashboardJabatanController::class)->middleware('auth');
+Route::resource('/dashboard/jurusan-kabinet', DashboardJurusanController::class)->middleware('auth');
+Route::resource('/dashboard/angkatan-kabinet', DashboardAngkatanController::class)->middleware('auth');
 Route::resource('/dashboard/anggota-kabinet', DashboardAnggotaController::class)->middleware('auth');
 Route::get('/dashboard/posts/checkSlug/{title?}', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 

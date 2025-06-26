@@ -37,28 +37,44 @@
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="mb-3">
-            <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control" id="slug" name="slug" required>
-        </div>
-        <div class="mb-3">
-            <label for="jabatan" class="form-label">Jabatan</label>
-            <input type="text" class="form-control" id="jabatan" name="jabatan" required>
-        </div>
-        <div class="mb-3">
             <label for="bidang" class="form-label">Bidang</label>
-            <select class="form-select" name="bidang_id">
+            <select class="form-select" name="bidang_id" required>
+                <option value="" selected disabled>-- Pilih Bidang --</option>
                 @foreach($bidang as $b)
                 <option value="{{$b->id}}">{{$b->name}}</option>
                 @endforeach
             </select>
         </div>
         <div class="mb-3">
+            <label for="jabatan" class="form-label">Jabatan</label>
+            <select class="form-select" name="jabatan_id" required>
+                <option value="" selected disabled>-- Pilih Jabatan --</option>
+                @foreach($jabatan as $jbt)
+                <option value="{{$jbt->id}}">{{$jbt->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="jurusan" class="form-label">Jurusan</label>
-            <input class="form-control" id="jurusan" name="jurusan" required></input>
+            <select class="form-select" name="jurusan_id" required>
+                <option value="" selected disabled>-- Pilih Jurusan --</option>
+                @foreach($jurusan as $jrs)
+                <option value="{{$jrs->id}}">{{$jrs->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="angkatan" class="form-label">Angkatan</label>
+            <select class="form-select" name="angkatan_id" required>
+                <option value="" selected disabled>-- Pilih Angkatan --</option>
+                @foreach($angkatan as $akt)
+                <option value="{{$akt->id}}">{{$akt->tahun}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Post Image</label>
-            <input class="form-control" type="file" id="image" name="image">
+            <input class="form-control" type="file" id="image" name="image" required>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>

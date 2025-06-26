@@ -3,9 +3,9 @@
 @section('container')
 <div class="container">
     <main class="form-signin w-100 m-auto d-flex align-items-center justify-content-center">
-        <form class="card border-0 p-4" action="/register" method="post">
+        <form class="card border-0 p-4" action="/admin/register" method="post">
             @csrf
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <h1 class="h3 mb-3 fw-normal">Please register</h1>
             <div class="form-floating">
                 <input type="text" name="name" class="form-control @error('name')is-invalid @enderror" id="name" is
                     placeholder="Akhila Zahra" autofocus required value="{{old('name')}}">
@@ -36,7 +36,7 @@
                 </div>
                 @enderror
             </div>
-            <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+            <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
             <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
         </form>
     </main>

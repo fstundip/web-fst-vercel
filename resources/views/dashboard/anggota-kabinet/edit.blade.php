@@ -38,14 +38,6 @@
             <input type="text" class="form-control" id="name" name="name" required value="{{ old('name', $anggota->name) }}">
         </div>
         <div class="mb-3">
-            <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control" id="slug" name="slug" required value="{{ old('slug', $anggota->slug) }}">
-        </div>
-        <div class="mb-3">
-            <label for="jabatan" class="form-label">Jabatan</label>
-            <input type="text" class="form-control" id="jabatan" name="jabatan" required value="{{ old('jabatan', $anggota->jabatan) }}">
-        </div>
-        <div class="mb-3">
             <label for="bidang" class="form-label">Bidang</label>
             <select class="form-select" name="bidang_id">
                 @foreach($bidang as $b)
@@ -56,8 +48,34 @@
             </select>
         </div>
         <div class="mb-3">
+            <label for="jabatan" class="form-label">Jabatan</label>
+            <select class="form-select" name="jabatan_id">
+                @foreach($jabatan as $jbt)
+                <option value="{{ $jbt->id }}" {{ $anggota->jabatan_id == $jbt->id ? 'selected' : '' }}>
+                    {{ $jbt->name }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="jurusan" class="form-label">Jurusan</label>
-            <input type="text" class="form-control" id="jurusan" name="jurusan" required value="{{ old('jurusan', $anggota->jurusan) }}">
+            <select class="form-select" name="jurusan_id">
+                @foreach($jurusan as $jrs)
+                <option value="{{ $jrs->id }}" {{ $anggota->jurusan_id == $jrs->id ? 'selected' : '' }}>
+                    {{ $jrs->name }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="angkatan" class="form-label">Angkatan</label>
+            <select class="form-select" name="angkatan_id">
+                @foreach($angkatan as $akt)
+                <option value="{{ $akt->id }}" {{ $anggota->angkatan_id == $akt->id ? 'selected' : '' }}>
+                    {{ $akt->tahun }}
+                </option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Post Image</label>

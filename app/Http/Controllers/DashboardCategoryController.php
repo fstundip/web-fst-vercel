@@ -39,10 +39,10 @@ class DashboardCategoryController extends Controller
             'slug' => 'required|unique:categories',
         ]);
 
-        $bidangKabinet = new Category();
-        $bidangKabinet->name = $request->input('name');
-        $bidangKabinet->slug = $request->input('slug');
-        $bidangKabinet->save();
+        $category = new Category();
+        $category->name = $request->input('name');
+        $category->slug = $request->input('slug');
+        $category->save();
 
 
         return redirect('dashboard/categories')->with('success', 'New category has been added!');
