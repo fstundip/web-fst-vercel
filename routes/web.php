@@ -9,10 +9,11 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardCategoryController;
 use App\Http\Controllers\DashboardPostController;
-use App\Http\Controllers\DashboardPagesController;
-use App\Http\Controllers\DashboardBidangController;
+use App\Http\Controllers\DashboardPageController;
 use App\Http\Controllers\DashboardAnggotaController;
+use App\Http\Controllers\DashboardBidangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,12 +60,10 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
 
+Route::resource('/dashboard/categories', DashboardCategoryController::class)->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
-Route::resource('/dashboard/pages', DashboardPagesController::class)->middleware('auth');
-Route::resource('/dashboard/bidang-kabinet', DashboardBidangController::class)
-    ->parameters([
-        'bidang-kabinet' => 'bidang'
-    ])->middleware('auth');
+Route::resource('/dashboard/pages', DashboardPageController::class)->middleware('auth');
+Route::resource('/dashboard/bidang-kabinet', DashboardBidangController::class)->middleware('auth');
 Route::resource('/dashboard/anggota-kabinet', DashboardAnggotaController::class)->middleware('auth');
 Route::get('/dashboard/posts/checkSlug/{title?}', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 

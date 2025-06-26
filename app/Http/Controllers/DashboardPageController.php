@@ -6,7 +6,7 @@ use App\Models\Pages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class DashboardPagesController extends Controller
+class DashboardPageController extends Controller
 {
     /**
      * Display a listing of the resource.

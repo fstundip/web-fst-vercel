@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Bidang;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 
 
-class DashboardBidangController extends Controller
+class DashboardCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboard.bidang-kabinet.index', [
-            'bidang' => Bidang::all()
+        return view('dashboard.categories.index', [
+            'category' => Category::all()
         ]);
     }
 
@@ -26,7 +26,7 @@ class DashboardBidangController extends Controller
      */
     public function create()
     {
-        return view('dashboard.bidang-kabinet.create');
+        return view('dashboard.categories.create');
     }
 
     /**
@@ -36,16 +36,16 @@ class DashboardBidangController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|unique:bidangs',
+            'slug' => 'required|unique:categories',
         ]);
 
-        $bidangKabinet = new Bidang;
+        $bidangKabinet = new Category();
         $bidangKabinet->name = $request->input('name');
         $bidangKabinet->slug = $request->input('slug');
         $bidangKabinet->save();
 
 
-        return redirect('dashboard/bidang-kabinet')->with('success', 'New bidang has been added!');
+        return redirect('dashboard/categories')->with('success', 'New category has been added!');
     }
 
     /**
@@ -53,9 +53,9 @@ class DashboardBidangController extends Controller
      */
     public function show($id)
     {
-        $bidang = Bidang::findOrFail($id);
-        return view('dashboard.bidang-kabinet.show', [
-            'bidang' => $bidang
+        $category = Category::findOrFail($id);
+        return view('dashboard.categories.show', [
+            'category' => $category
         ]);
     }
 
@@ -64,31 +64,30 @@ class DashboardBidangController extends Controller
      */
     public function edit($id)
     {
-        $bidang = Bidang::findOrFail($id);
-        return view('dashboard.bidang-kabinet.edit', [
-            'bidang' => $bidang
+        $category = Category::findOrFail($id);
+        return view('dashboard.categories.edit', [
+            'category' => $category
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        $bidang = Bidang::findOrFail($id);
         $rules = [
             'name' => 'required|max:255',
         ];
 
-        if ($request->slug != $bidang->slug) {
-            $rules['slug'] = 'required|unique:bidangs';
+        if ($request->slug != $category->slug) {
+            $rules['slug'] = 'required|unique:categories';
         }
 
         $validatedData = $request->validate($rules);
 
-        $bidang->update($validatedData);
+        $category->update($validatedData);
 
-        return redirect('dashboard/bidang-kabinet')->with('success', 'Bidang has been updated!');
+        return redirect('dashboard/categories')->with('success', 'Category has been updated!');
     }
 
 
@@ -98,12 +97,12 @@ class DashboardBidangController extends Controller
      */
     public function destroy($id)
     {
-        $bidang = Bidang::findOrFail($id);
-        $bidang->delete();
+        $category = Category::findOrFail($id);
+        $category->delete();
 
-        $messages = 'Bidang has been deleted!';
+        $messages = 'Category has been deleted!';
 
-        return redirect('dashboard/bidang-kabinet')->with('success', $messages);
+        return redirect('dashboard/categories')->with('success', $messages);
     }
 
 }
