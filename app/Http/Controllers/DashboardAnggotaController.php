@@ -41,22 +41,22 @@ class DashboardAnggotaController extends Controller
             'name' => 'required|max:255',
             'bidang_id' => 'required',
             'slug' => 'required|unique:anggotas',
-            'image' => 'image|file|max:3000',
+            'image' => 'image|file|max:10000|mimes:jpeg,png,jpg',
             'jabatan' => 'required',
             'jurusan' => 'required'
         ]);
 
-        $imagePath = $request->file('image')->store('post-images', 'public');
+        $image = $request->file('image');
+        $image->storeAs('public/anggota-images', $image->hashName());
 
-        $bidangKabinet = new Anggota;
-        $bidangKabinet->name = $request->input('name');
-        $bidangKabinet->slug = $request->input('slug');
-        $bidangKabinet->jabatan = $request->input('jabatan');
-        $bidangKabinet->bidang_id = $request->input('bidang_id');
-        $bidangKabinet->jurusan = $request->input('jurusan');
-        $bidangKabinet->image = $imagePath; // Menyimpan path file gambar ke dalam kolom 'image'
-        $bidangKabinet->save();
-
+        Anggota::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'jabatan' => $request->jabatan,
+            'bidang_id' => $request->bidang_id,
+            'jurusan' => $request->jurusan,
+            'image' => 'anggota-images/' . $image->hashName(), 
+        ]);
 
         return redirect('dashboard/anggota-kabinet')->with('success', 'New anggota has been added!');
     }
@@ -87,14 +87,16 @@ class DashboardAnggotaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Anggota $anggota)
+    public function update(Request $request, $id)
     {
+        $anggota = Anggota::findOrFail($id);
+
         $rules = [
             'name' => 'required|max:255',
-            'jabatan' => 'required',
             'bidang_id' => 'required',
+            'jabatan' => 'required',
             'jurusan' => 'required',
-            'image' => 'image|file|max:8000'
+            'image' => 'image|file|max:10000|mimes:jpeg,png,jpg',
         ];
 
         if ($request->slug != $anggota->slug) {
@@ -104,18 +106,19 @@ class DashboardAnggotaController extends Controller
         $validatedData = $request->validate($rules);
 
         if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
-        }
+            if ($anggota->image) {
+                Storage::delete('public/' . $anggota->image);
+            }
 
-        $validatedData['bidang_id'] = auth()->user()->id;
+            $image = $request->file('image');
+            $image->storeAs('public/anggota-images', $image->hashName());
+            $validatedData['image'] = 'anggota-images/' . $image->hashName();
+        }
 
         $anggota->update($validatedData);
 
-        $message = "Anggota has been updated successfully!";
-
-        return redirect('dashboard/anggota-kabinet')->with('success', $message);
+        return redirect('dashboard/anggota-kabinet')->with('success', 'Anggota has been updated!');
     }
-
 
 
     /**
@@ -124,6 +127,9 @@ class DashboardAnggotaController extends Controller
     public function destroy($id, Anggota $anggota)
     {
         $anggota = Anggota::findOrFail($id);
+        if ($anggota->image) {
+            Storage::delete('public/' . $anggota->image);
+        }
         $anggota->delete();
 
         $messages = 'Anggota has been deleted!';

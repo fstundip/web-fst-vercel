@@ -79,9 +79,9 @@
                                             <a href="/" class="dropdown-item fw-normal">Riset</a>
                                             <a href="/" class="dropdown-item fw-normal">Media
                                                 Kreatif</a>
-                                            <a href="/" class="dropdown-item fw-normal">HRD</a>
+                                            <a href="/" class="dropdown-item fw-normal">Human Resource Development</a>
                                             <a href="/" class="dropdown-item fw-normal">Public
-                                                Relations</a>
+                                                Relation</a>
                                             <a href="/" class="dropdown-item fw-normal">Technopreneurship</a>
                                         </div>
                                     </div>

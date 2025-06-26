@@ -31,10 +31,10 @@
 </div>
 <div class="card p-4 border-0 shadow-sm">
     <form method="post" action="/dashboard/anggota-kabinet/{{$anggota->id}}" enctype="multipart/form-data">
-        @method('put')
         @csrf
+        @method('put')
         <div class="mb-3">
-            <label for="title" class="form-label">Nama</label>
+            <label for="name" class="form-label">Nama</label>
             <input type="text" class="form-control" id="name" name="name" required value="{{ old('name', $anggota->name) }}">
         </div>
         <div class="mb-3">
@@ -66,7 +66,7 @@
             @endif
             <input class="form-control" type="file" id="image" name="image">
         </div>
-        <button type="submit" class="btn btn-primary">Edit</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
 @endsection

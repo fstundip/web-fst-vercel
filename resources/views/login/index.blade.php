@@ -3,7 +3,7 @@
 @section('container')
 <div class="container">
     <main class="form-signin w-100 m-auto d-flex align-items-center justify-content-center">
-        <form class="card border-0 p-4" action="/login" method="post">
+        <form class="card border-0 p-4" action="/admin/login" method="post">
             @csrf
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 

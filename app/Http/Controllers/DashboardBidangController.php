@@ -87,9 +87,7 @@ class DashboardBidangController extends Controller
 
         $bidang->update($validatedData);
 
-        $message = "Bidang has been updated successfully!";
-
-        return redirect('dashboard/bidang-kabinet')->with('success', $message);
+        return redirect('dashboard/bidang-kabinet')->with('success', 'Bidang has been updated!');
     }
 
 
