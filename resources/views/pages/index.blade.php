@@ -7,10 +7,10 @@
             <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/blog/">pages</a>
+            <a href="/blog/">Page</a>
         </li>
         <li class="breadcrumb-item">
-            <a class="d-flex text-dark">{{$pages->title}}</a>
+            <a class="d-flex text-dark">{{$page->title}}</a>
         </li>
     </ol>
 
@@ -18,10 +18,8 @@
         <div class="card-post col-xl-8">
             <div class="card border-0 h-100 text-decoration-none">
                 <div class="card-body">
-                    <h4 class="card-title mb-2" style="font-weight: 500; color:#323f52">{{$pages->title}}</h4>
-                    <img src="{{ asset('storage/' . $pages->image)}}" alt="" class="rounded mb-2"
-                        style="width: 300px; height: auto; display: block; margin: 0 auto;">
-                    {!! $pages->body !!}</>
+                    <h4 class="card-title mb-2" style="font-weight: 500; color:#323f52">{{$page->title}}</h4>
+                    {!! $page->body !!}</>
                 </div>
             </div>
         </div>

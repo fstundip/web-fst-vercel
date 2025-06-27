@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 
 class PageController extends Controller
 {
-    public function index(Pages $pages)
+    public function index(Page $page)
     {
         return view('pages.index', [
             "title" => "Page - Forum Studi Teknik (FST)",
-            "pages" => $pages
+            "page" => $page
         ]);
     }
 }

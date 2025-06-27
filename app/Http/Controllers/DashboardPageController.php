@@ -33,7 +33,7 @@ class DashboardPageController extends Controller
     {
         $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required|unique:posts',
+            'slug' => 'required|unique:pages',
             'body' => 'required'
         ]);
 
@@ -43,7 +43,7 @@ class DashboardPageController extends Controller
         $page->body = $request->input('body');
         $page->save();
 
-        return redirect('dashboard/pages')->with('success', 'New post has been added!');
+        return redirect('dashboard/pages')->with('success', 'New page has been added!');
     }
 
     /**

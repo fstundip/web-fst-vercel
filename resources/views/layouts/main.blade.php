@@ -74,15 +74,15 @@
                                         <div class="col-lg-6 nav-col">
                                             <h6 class="dropdown-header text-success">BIDANG KABINET FST UNDIP
                                             </h6>
-                                            <a href="/" class="dropdown-item fw-normal">Pengurus Harian</a>
-                                            <a href="/" class="dropdown-item fw-normal">Edukasi</a>
-                                            <a href="/" class="dropdown-item fw-normal">Riset</a>
-                                            <a href="/" class="dropdown-item fw-normal">Media
+                                            <a href="/bidang-kabinet/pengurus-harian" class="dropdown-item fw-normal">Pengurus Harian</a>
+                                            <a href="/bidang-kabinet/edukasi" class="dropdown-item fw-normal">Edukasi</a>
+                                            <a href="/bidang-kabinet/riset" class="dropdown-item fw-normal">Riset</a>
+                                            <a href="/bidang-kabinet/media-kreatif" class="dropdown-item fw-normal">Media
                                                 Kreatif</a>
-                                            <a href="/" class="dropdown-item fw-normal">Human Resource Development</a>
-                                            <a href="/" class="dropdown-item fw-normal">Public
+                                            <a href="/bidang-kabinet/human-resource-development" class="dropdown-item fw-normal">Human Resource Development</a>
+                                            <a href="/bidang-kabinet/public-relation" class="dropdown-item fw-normal">Public
                                                 Relation</a>
-                                            <a href="/" class="dropdown-item fw-normal">Technopreneurship</a>
+                                            <a href="/bidang-kabinet/technopreneurship" class="dropdown-item fw-normal">Technopreneurship</a>
                                         </div>
                                     </div>
                                 </div>
