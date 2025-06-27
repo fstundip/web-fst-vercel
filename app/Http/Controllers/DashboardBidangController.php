@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bidang;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
-
-
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardBidangController extends Controller
 {
@@ -103,4 +100,9 @@ class DashboardBidangController extends Controller
         return redirect('dashboard/bidang-kabinet')->with('success', $messages);
     }
 
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Bidang::class, 'slug', $request->name);
+        return response()->json(['slug' => $slug]);
+    }
 }

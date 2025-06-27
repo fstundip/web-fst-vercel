@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jurusan;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
-
-
 
 class DashboardJurusanController extends Controller
 {

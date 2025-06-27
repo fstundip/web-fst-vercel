@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardPageController extends Controller
 {
@@ -100,5 +99,11 @@ class DashboardPageController extends Controller
         $messages = 'Page has been deleted!';
 
         return redirect('dashboard/pages')->with('success', $messages);
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Page::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

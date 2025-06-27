@@ -71,7 +71,12 @@ Route::resource('/dashboard/jabatan-kabinet', DashboardJabatanController::class)
 Route::resource('/dashboard/jurusan-kabinet', DashboardJurusanController::class)->middleware('auth');
 Route::resource('/dashboard/angkatan-kabinet', DashboardAngkatanController::class)->middleware('auth');
 Route::resource('/dashboard/anggota-kabinet', DashboardAnggotaController::class)->middleware('auth');
+Route::get('/dashboard/categories/checkSlug/{name?}', [DashboardCategoryController::class, 'checkSlug'])->middleware('auth');
 Route::get('/dashboard/posts/checkSlug/{title?}', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+Route::get('/dashboard/pages/checkSlug/{title?}', [DashboardPageController::class, 'checkSlug'])->middleware('auth');
+Route::get('/dashboard/bidang-kabinet/checkSlug/{name?}', [DashboardBidangController::class, 'checkSlug'])->middleware('auth');
+
+
 
 Route::get('/pages/{pages:slug}', [PageController::class, 'index']);
 Route::get('pages/{id}', [PostController::class, 'show']);

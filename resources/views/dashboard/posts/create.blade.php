@@ -60,24 +60,4 @@
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
 </div>
-
-<canvas class="my-4 w-100" id="myChart" width="900" height="380">
-</canvas>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const title = document.querySelector('#title');
-        const slug = document.querySelector('#slug');
-
-        title.addEventListener('change', function () {
-            fetch(`/dashboard/posts/checkSlug?title=` + title.value)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data); // Catat data respons
-                    slug.value = data.slug;
-                })
-                .catch(error => console.error('Error:', error)); // Catat kesalahan
-        });
-    });
-</script>
 @endsection
