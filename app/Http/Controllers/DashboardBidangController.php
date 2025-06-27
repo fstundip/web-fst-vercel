@@ -78,11 +78,8 @@ class DashboardBidangController extends Controller
         $bidang = Bidang::findOrFail($id);
         $rules = [
             'name' => 'required|max:255',
+            'slug' => 'required|unique:bidangs,slug,' . $bidang->id,
         ];
-
-        if ($request->slug != $bidang->slug) {
-            $rules['slug'] = 'required|unique:bidangs';
-        }
 
         $validatedData = $request->validate($rules);
 

@@ -47,7 +47,6 @@
                     <th scope="col-3">#</th>
                     <th scope="col-3">Title</th>
                     <th scope="col-3">Slug</th>
-                    <th scope="col-3">Body</th>
                     <th scope="col-3">Action</th>
                 </tr>
             </thead>
@@ -57,7 +56,6 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{ $page->title }}</td>
                     <td>{{ $page->slug }}</td>
-                    <td>{{ $page->body }}</td>
                     <td>
                         <a href="/dashboard/pages/{{$page->id}}" class="badge bg-primary"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"

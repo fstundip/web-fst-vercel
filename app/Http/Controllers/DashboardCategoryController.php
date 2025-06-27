@@ -77,11 +77,8 @@ class DashboardCategoryController extends Controller
     {
         $rules = [
             'name' => 'required|max:255',
+            'slug' => 'required|unique:categories,slug,' . $category->id,
         ];
-
-        if ($request->slug != $category->slug) {
-            $rules['slug'] = 'required|unique:categories';
-        }
 
         $validatedData = $request->validate($rules);
 

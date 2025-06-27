@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardPostController extends Controller
 {
@@ -26,7 +27,7 @@ class DashboardPostController extends Controller
     public function create()
     {
         return view('dashboard.posts.create', [
-            'categories' => Category::all()
+            'category' => Category::all()
         ]);
     }
 
@@ -35,23 +36,25 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'required|image|file|max:10000|mimes:jpeg,png,jpg',
             'body' => 'required'
         ]);
 
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
-        }
+        $image = $request->file('image');
+        $image->storeAs('public/post-images', $image->hashName());
 
-        $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body, 200));
-
-        Post::create($validatedData);
+        Post::create([
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'category_id' => $request->category_id,
+            'body' => $request->body,
+            'image' => 'post-images/' . $image->hashName(), 
+            'excerpt' => Str::limit(strip_tags($request->body), 200)
+        ]);
 
         return redirect('dashboard/posts')->with('success', 'New post has been added!');
 
@@ -60,8 +63,9 @@ class DashboardPostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show($id)
     {
+        $post = Post::findOrFail($id);
         return view('dashboard.posts.show', [
             'post' => $post
         ]);
@@ -70,43 +74,59 @@ class DashboardPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
+        $post = Post::findOrFail($id);
         return view('dashboard.posts.edit', [
             'post' => $post,
-            'categories' => Category::all()
+            'category' => Category::all()
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
+        $post = Post::findOrFail($id);
+
+        $rules = [
             'title' => 'required|max:255',
-            'slug' => 'required|unique:posts',
+            'slug' => 'required|unique:posts,slug,' . $post->id,
             'category_id' => 'required',
+            'image' => 'image|file|max:10000|mimes:jpeg,png,jpg',
             'body' => 'required'
-        ]);
+        ];
+        
+        $validatedData = $request->validate($rules);
 
-        $validatedData['category_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body, 200));
+        if ($request->file('image')) {
+            if ($post->image) {
+                Storage::delete('public/' . $post->image);
+            }
 
-        Post::where('id', $post->id)
-            ->update($validatedData);
+            $image = $request->file('image');
+            $image->storeAs('public/post-images', $image->hashName());
+            $validatedData['image'] = 'post-images/' . $image->hashName();
+        }
 
-        $messages = "Post has been edited!";
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
-        return redirect('dashboard/posts')->with('success', $messages);
+        $post->update($validatedData);
+
+        return redirect('dashboard/posts')->with('success', 'Post has been edited!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        Post::destroy($post->id);
+        $post = Post::findOrFail($id);
+         if ($post->image) {
+            Storage::delete('public/' . $post->image);
+        }
+        $post->delete();
 
         $messages = 'Post has been deleted!';
 

@@ -45,7 +45,10 @@
             <thead>
                 <tr>
                     <th scope="col-3">#</th>
+                    <th scope="col-3">Image</th>
                     <th scope="col-3">Title</th>
+                    <th scope="col-3">Slug</th>
+                    <th scope="col-3">Category</th>
                     <th scope="col-3">Excerpt</th>
                     <th scope="col-3">Action</th>
                 </tr>
@@ -54,7 +57,12 @@
                 @foreach ($posts as $post)
                 <tr>
                     <td>{{$loop->iteration}}</td>
+                    <td>
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->name }}" width="50" class="img-thumbnail">
+                    </td>
                     <td>{{ $post->title }}</td>
+                    <td>{{ $post->slug }}</td>
+                    <td>{{ $post->category->name }}</td>
                     <td>{{ $post->excerpt }}</td>
                     <td>
                         <a href="/dashboard/posts/{{$post->id}}" class="badge bg-primary"><svg

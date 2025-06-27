@@ -79,11 +79,8 @@ class DashboardPageController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'body' => 'required',
+            'slug' => 'required|unique:pages,slug,' . $page->id,
         ];
-
-        if ($request->slug != $page->slug) {
-            $rules['slug'] = 'required|unique:pages';
-        }
 
         $validatedData = $request->validate($rules);
 

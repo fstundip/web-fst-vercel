@@ -46,7 +46,7 @@ class DashboardAnggotaController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'bidang_id' => 'required',
-            'image' => 'image|file|max:10000|mimes:jpeg,png,jpg',
+            'image' => 'required|image|file|max:10000|mimes:jpeg,png,jpg',
             'jabatan_id' => 'required',
             'jurusan_id' => 'required',
             'angkatan_id' => 'required'
@@ -130,7 +130,7 @@ class DashboardAnggotaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id, Anggota $anggota)
+    public function destroy($id)
     {
         $anggota = Anggota::findOrFail($id);
         if ($anggota->image) {

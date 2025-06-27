@@ -38,14 +38,14 @@
         </div>
         <div class="mb-3">
             <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control" id="slug" name="slug" readonly>
+            <input type="text" class="form-control" id="slug" name="slug" required>
         </div>
         <div class="mb-3">
-            <label for="category" class="form-label"></label>
-            <select class="form-select" name="category_id">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" name="category_id" required>
                 <option value="" selected disabled>-- Pilih Category --</option>
-                @foreach($categories as $category)
-                <option value="{{$category->id}}">{{$category->name}}</option>
+                @foreach($category as $ctg)
+                <option value="{{$ctg->id}}">{{$ctg->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="mb-3">
             <label for="body" class="form-label">Body</label>
-            <textarea class="form-control" id="summernote" name="body" required></textarea>
+            <textarea class="form-control" id="summernote" name="body" required style="height: 350px;"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
