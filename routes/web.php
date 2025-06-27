@@ -79,7 +79,7 @@ Route::get('/dashboard/bidang-kabinet/checkSlug/{name?}', [DashboardBidangContro
 
 
 Route::get('bidang-kabinet/{slug}', [BidangController::class, 'show']);
-Route::get('/pages/{pages:slug}', [PageController::class, 'index']);
+Route::get('/pages/{slug}', [PageController::class, 'show']);
 Route::get('posts/{id}', [PostController::class, 'show']);
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('category', [

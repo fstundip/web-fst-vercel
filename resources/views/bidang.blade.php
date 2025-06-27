@@ -6,7 +6,6 @@
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item active text-black">{{ $bidang }}</li>
     </ol>
-
     <div class="card border-0 mb-4 card-blog">
         <div class="card-header border-0">
             <h1 class="fw-bold">{{ $bidang }}</h1>

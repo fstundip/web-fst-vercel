@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Page;
 
 class PageController extends Controller
 {
-    public function index(Page $page)
+    public function show($slug)
     {
-        return view('pages.index', [
-            "title" => "Page - Forum Studi Teknik (FST)",
-            "page" => $page
+        $page = Page::where('slug', $slug)->firstOrFail();
+
+        return view('pages.show', [
+            'title' => $page->title,
+            'page' => $page
         ]);
     }
 }
