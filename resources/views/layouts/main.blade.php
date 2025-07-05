@@ -46,7 +46,7 @@
                         <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
                     </li>
                     <li class="nav-item dropdown dropdown-xl no-caret show">
-                        <a class="nav-link dropdown-toggle {{ Request::is('visi-misi', 'nilai-nilai-inti', 'logo-kabinet', 'bidang-kabinet*') ? 'active' : '' }}" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle {{ Request::is('visi-misi', 'nilai-nilai-inti', 'logo-kabinet', 'bidang-kabinet*') ? 'active px-3' : '' }}" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             Profil<svg class="svg-inline--fa fa-chevron-right fa-w-10 dropdown-arrow ms-10" aria-hidden="true"
                                 focusable="false" data-prefix="fas" data-icon="chevron-right" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
@@ -90,7 +90,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown dropdown-xl no-caret show">
-                        <a class="nav-link dropdown-toggle {{ Request::is('informasi*') ? 'active' : '' }}" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle {{ Request::is('informasi*') ? 'active px-3' : '' }}" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             Informasi<svg class="svg-inline--fa fa-chevron-right fa-w-10 dropdown-arrow" aria-hidden="true"
                                 focusable="false" data-prefix="fas" data-icon="chevron-right" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
