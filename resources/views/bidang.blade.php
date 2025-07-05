@@ -26,5 +26,12 @@
             </div>
         </div>
     @endforeach
+
+    {{-- Tampilkan deskripsi bidang di sini --}}
+    <div class="container mt-2">
+        <div class="text-dark">
+            {!! $bidang->description !!}
+        </div>
+    </div>
 </div>
 @endsection
