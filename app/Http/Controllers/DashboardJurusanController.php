@@ -43,17 +43,6 @@ class DashboardJurusanController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        $jurusan = Jurusan::findOrFail($id);
-        return view('dashboard.jurusan-kabinet.show', [
-            'jurusan' => $jurusan
-        ]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)

@@ -57,7 +57,7 @@
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->slug }}</td>
                     <td>
-                        <a href="/dashboard/categories/{{$category->id}}" class="badge bg-primary"><svg
+                        <a href="/informasi/{{$category->slug}}" class="badge bg-primary"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                 class="bi bi-eye" viewBox="0 0 16 16">
                                 <path

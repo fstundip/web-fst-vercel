@@ -12,7 +12,7 @@ class BidangController extends Controller
         $anggota = $bidang->anggota;
 
         return view('bidang', [
-            'title' => 'Bidang ' . $bidang->name, 
+            'title' => $bidang->name, 
             'bidang' => $bidang->name,
             'anggota' => $anggota
         ]);

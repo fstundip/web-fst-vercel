@@ -7,7 +7,7 @@
             <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/blog/">blog</a>
+            <a href="/informasi/">Informasi</a>
         </li>
     </ol>
 
@@ -19,7 +19,7 @@
             <div class="row">
                 @foreach ($posts as $post)
                 <div class="col-md-6 col-xl-4 mb-4">
-                    <a href="/blog/{{ $post->slug }}" class="card border-0 h-100 text-decoration-none">
+                    <a href="/informasi/{{ $post->slug }}" class="card border-0 h-100 text-decoration-none">
                         <img src="{{ asset('storage/' . $post->image)}}" alt="" class="img-fluid"
                             style="height: 300px;">
                         <div class=" card-body">

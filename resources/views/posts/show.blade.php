@@ -4,10 +4,10 @@
 <div class="container">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/">Home</a>
+            <a href="/home">Home</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/blog/">blog</a>
+            <a href="/informasi/">Informasi</a>
         </li>
         <li class="breadcrumb-item">
             <a class="d-flex text-dark">{{$post -> title}}</a>

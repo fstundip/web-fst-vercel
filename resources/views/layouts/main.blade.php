@@ -62,13 +62,13 @@
                                         <div class="col-lg-6 nav-col">
                                             <h6 class="dropdown-header text-success">TENTANG FST UNDIP
                                             </h6>
-                                            <a href="/pages/visi-misi" class="dropdown-item fw-normal">Visi - Misi</a>
-                                            <a href="/pages/nilai-nilai-inti" class="dropdown-item fw-normal">Nilai -
+                                            <a href="/visi-misi" class="dropdown-item fw-normal">Visi - Misi</a>
+                                            <a href="/nilai-nilai-inti" class="dropdown-item fw-normal">Nilai -
                                                 Nilai
                                                 Inti</a>
-                                            <a href="/pages/logo-kabinet" class="dropdown-item fw-normal">Logo
+                                            <a href="/logo-kabinet" class="dropdown-item fw-normal">Logo
                                                 Kabinet</a>
-                                            <a href="/pages/bidang-kabinet" class="dropdown-item fw-normal">Bidang
+                                            <a href="/bidang-kabinet" class="dropdown-item fw-normal">Bidang
                                                 Kabinet</a>
                                         </div>
                                         <div class="col-lg-6 nav-col">
@@ -90,8 +90,8 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ str_starts_with(url()->current(), url('/blog/')) ? 'active' : '' }}"
-                            href="/blog/">Informasi</a>
+                        <a class="nav-link {{ str_starts_with(url()->current(), url('/informasi/')) ? 'active' : '' }}"
+                            href="/informasi">Informasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('prestasi') ? 'active' : '' }}" href="/prestasi">Prestasi</a>

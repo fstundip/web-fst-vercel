@@ -61,17 +61,6 @@ class DashboardPostController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        $post = Post::findOrFail($id);
-        return view('dashboard.posts.show', [
-            'post' => $post
-        ]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)

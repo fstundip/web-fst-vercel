@@ -46,17 +46,6 @@ class DashboardCategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        $category = Category::findOrFail($id);
-        return view('dashboard.categories.show', [
-            'category' => $category
-        ]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)

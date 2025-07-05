@@ -6,6 +6,7 @@ use App\Models\Anggota;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BidangController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
@@ -42,17 +43,6 @@ Route::get('/profile', function () {
     ]);
 });
 
-Route::get('/blog', [PostController::class, 'index']);
-
-// SINGLE POST
-Route::get('blog/{post:slug}', [PostController::class, 'show']);
-
-Route::get('/prestasi', function () {
-    return view('prestasi', [
-        "title" => "Prestasi - Forum Studi Teknik (FST)"
-    ]);
-});
-
 Route::get('/admin/login', [LoginController::class, 'index']);
 Route::post('/admin/login', [LoginController::class, 'authenticate']);
 Route::post('/admin/logout', [LoginController::class, 'logout']);
@@ -78,24 +68,11 @@ Route::get('/dashboard/pages/checkSlug/{title?}', [DashboardPageController::clas
 Route::get('/dashboard/bidang-kabinet/checkSlug/{name?}', [DashboardBidangController::class, 'checkSlug'])->middleware('auth');
 
 
-Route::get('bidang-kabinet/{slug}', [BidangController::class, 'show']);
-Route::get('/pages/{slug}', [PageController::class, 'show']);
-Route::get('posts/{id}', [PostController::class, 'show']);
-Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('category', [
-        'title' => $category->name,
-        'posts' => $category->posts,
-        'category' => $category->name
-    ]);
-});
-
-Route::get('/pages/bidang-kabinet/{bidang:slug}', function (Bidang $bidang) {
-    return view('bidang', [
-        'title' => $bidang->name,
-        'anggota' => $bidang->anggota,
-        'bidang' => $bidang->name
-    ]);
-});
+Route::get('/bidang-kabinet/{slug}', [BidangController::class, 'show']);
+Route::get('/informasi/{slug}', [CategoryController::class, 'show']);
+Route::get('/{slug}', [PageController::class, 'show']);
+Route::get('/informasi', [PostController::class, 'index']);
+Route::get('/informasi/{category_slug}/{post_slug}', [PostController::class, 'show']);
 
 
 

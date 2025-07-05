@@ -47,17 +47,6 @@ class DashboardBidangController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        $bidang = Bidang::findOrFail($id);
-        return view('dashboard.bidang-kabinet.show', [
-            'bidang' => $bidang
-        ]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)

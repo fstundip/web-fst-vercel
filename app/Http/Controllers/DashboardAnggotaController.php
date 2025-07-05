@@ -65,17 +65,6 @@ class DashboardAnggotaController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        $anggota = Anggota::findOrFail($id);
-        return view('dashboard.anggota-kabinet.show', [
-            'anggota' => $anggota
-        ]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)

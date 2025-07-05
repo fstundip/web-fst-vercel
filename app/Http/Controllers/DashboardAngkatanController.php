@@ -43,17 +43,6 @@ class DashboardAngkatanController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        $angkatan = Angkatan::findOrFail($id);
-        return view('dashboard.angkatan-kabinet.show', [
-            'angkatan' => $angkatan
-        ]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)
