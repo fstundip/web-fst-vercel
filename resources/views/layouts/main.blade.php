@@ -47,7 +47,7 @@
                     </li>
                     <li class="nav-item dropdown dropdown-xl no-caret show">
                         <a class="nav-link dropdown-toggle {{ Request::is('visi-misi', 'nilai-nilai-inti', 'logo-kabinet', 'bidang-kabinet*') ? 'active' : '' }}" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profil<svg class="svg-inline--fa fa-chevron-right fa-w-10 dropdown-arrow" aria-hidden="true"
+                            Profil<svg class="svg-inline--fa fa-chevron-right fa-w-10 dropdown-arrow ms-10" aria-hidden="true"
                                 focusable="false" data-prefix="fas" data-icon="chevron-right" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
                                 <path fill="currentColor"
@@ -162,23 +162,21 @@
         crossorigin="anonymous"></script>
 
     <script>
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownArrow = document.querySelector('.dropdown-arrow');
+    document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const arrow = toggle.querySelector('.dropdown-arrow');
 
-        // Toggle dropdown and rotate arrow
-        dropdownToggle.addEventListener('click', function () {
-            dropdownArrow.classList.toggle('rotate');
+        // Saat dropdown dibuka
+        dropdown.addEventListener('show.bs.dropdown', function () {
+            arrow.classList.add('rotate');
         });
 
-        // Close dropdown and reset arrow when clicking outside
-        document.body.addEventListener('click', function (event) {
-            if (!event.target.closest('.dropdown')) {
-                dropdownArrow.classList.remove('rotate');
-            }
+        // Saat dropdown ditutup
+        dropdown.addEventListener('hide.bs.dropdown', function () {
+            arrow.classList.remove('rotate');
         });
+    });
     </script>
-
-
 
     <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
