@@ -1,32 +1,29 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="container">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active text-black">{{ $bidang->name }}</li>
-    </ol>
-    <div class="card border-0 mb-4 card-blog">
-        <div class="card-header border-0">
-            <h1 class="fw-bold">{{ $bidang->name }}</h1>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                @foreach ($anggota as $item)
-                <div class="col-md-6 col-xl-4 mb-4">
-                    <a class="card border-0 h-100 text-decoration-none">
-                        <img src="{{ asset('storage/' . $item->image) }}" alt="" class="img-fluid" style="width:300px">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">{{ $item->name }}</h5>
-                            <p class="card-text">{{ $item->jabatan->name }}</p>
-                            <span class="badge bg-success mb-2">{{ $item->bidang->name }}</span>
-                            <p class="card-text">{{ $item->jurusan->name }} {{ $item->angkatan->tahun }}</p>
-                        </div>
-                    </a>
-                </div>
+<div>
+    <h2 class="text-center text-white fw-semibold py-4 bg-succes">{{ $bidang->name }}</h2>
+
+    @foreach ($anggotaByRows as $row)
+        <div class="container mb-4">
+            <div class="row justify-content-center">
+                @foreach ($row->chunk(3) as $chunk)
+                    <div class="row justify-content-center mb-3">
+                        @foreach ($chunk as $item)
+                            <div class="col-md-6 col-lg-4 text-center text-dark mb-4">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
+                                    class="img-fluid mb-3"
+                                    style="width: 300px; height:400px; object-fit: cover; object-position: center top;">
+                                <h5 class="fw-semibold mb-1">{{ $item->name }}</h5>
+                                <span class="badge bg-succes mb-1">{{ $item->bidang->name }}</span>
+                                <p class="mb-1 text-center text-dark">{{ $item->jabatan->name }}</p>
+                                <p class="mb-0 text-center text-dark">{{ $item->jurusan->name }} {{ $item->angkatan->tahun }}</p>
+                            </div>
+                        @endforeach
+                    </div>
                 @endforeach
             </div>
         </div>
-    </div>
+    @endforeach
 </div>
 @endsection
