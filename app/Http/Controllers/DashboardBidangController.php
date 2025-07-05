@@ -34,13 +34,14 @@ class DashboardBidangController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:bidangs',
+            'description' => 'required'
         ]);
 
         $bidang = new Bidang;
         $bidang->name = $request->input('name');
         $bidang->slug = $request->input('slug');
+        $bidang->description = $request->input('description');
         $bidang->save();
-
 
         return redirect('dashboard/bidang-kabinet')->with('success', 'New bidang has been added!');
     }
@@ -76,6 +77,7 @@ class DashboardBidangController extends Controller
         $rules = [
             'name' => 'required|max:255',
             'slug' => 'required|unique:bidangs,slug,' . $bidang->id,
+            'description' => 'required'
         ];
 
         $validatedData = $request->validate($rules);

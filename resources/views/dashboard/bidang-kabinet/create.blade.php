@@ -40,6 +40,10 @@
             <label for="slug" class="form-label">Slug</label>
             <input type="text" class="form-control" id="slug" name="slug" required>
         </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="summernote" name="description" required style="height: 350px;"></textarea>
+        </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
 </div>

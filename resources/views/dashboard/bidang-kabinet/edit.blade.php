@@ -41,6 +41,10 @@
             <label for="slug" class="form-label">Slug</label>
             <input type="text" class="form-control" id="slug" name="slug" required value="{{ old('slug', $bidang->slug) }}">
         </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="summernote" name="description" required>{{ old('description', $post->description) }}</textarea>
+        </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
