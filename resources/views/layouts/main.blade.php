@@ -62,27 +62,25 @@
                                         <div class="col-lg-6 nav-col">
                                             <h6 class="dropdown-header text-success">TENTANG FST UNDIP
                                             </h6>
-                                            <a href="/visi-misi" class="dropdown-item fw-normal">Visi - Misi</a>
-                                            <a href="/nilai-nilai-inti" class="dropdown-item fw-normal">Nilai -
-                                                Nilai
-                                                Inti</a>
-                                            <a href="/logo-kabinet" class="dropdown-item fw-normal">Logo
+                                            <a href="/visi-misi-kabinet" class="dropdown-item fw-normal {{ Request::is('visi-misi-kabinet') ? 'active' : '' }}">Visi - Misi Kabinet</a>
+                                            <a href="/nilai-kabinet" class="dropdown-item fw-normal {{ Request::is('nilai-kabinet') ? 'active' : '' }}">Nilai Kabinet</a>
+                                            <a href="/budaya-kabinet" class="dropdown-item fw-normal {{ Request::is('budaya-kabinet') ? 'active' : '' }}">Budaya
                                                 Kabinet</a>
-                                            <a href="/bidang-kabinet" class="dropdown-item fw-normal">Bidang
+                                            <a href="/logo-kabinet" class="dropdown-item fw-normal {{ Request::is('logo-kabinet') ? 'active' : '' }}">Logo
                                                 Kabinet</a>
                                         </div>
                                         <div class="col-lg-6 nav-col">
                                             <h6 class="dropdown-header text-success">BIDANG KABINET FST UNDIP
                                             </h6>
-                                            <a href="/bidang-kabinet/pengurus-harian" class="dropdown-item fw-normal">Pengurus Harian</a>
-                                            <a href="/bidang-kabinet/edukasi" class="dropdown-item fw-normal">Edukasi</a>
-                                            <a href="/bidang-kabinet/riset" class="dropdown-item fw-normal">Riset</a>
-                                            <a href="/bidang-kabinet/media-kreatif" class="dropdown-item fw-normal">Media
+                                            <a href="/bidang-kabinet/pengurus-harian" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/pengurus-harian') ? 'active' : '' }}">Pengurus Harian</a>
+                                            <a href="/bidang-kabinet/edukasi" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/edukasi') ? 'active' : '' }}">Edukasi</a>
+                                            <a href="/bidang-kabinet/riset" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/riset') ? 'active' : '' }}">Riset</a>
+                                            <a href="/bidang-kabinet/media-kreatif" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/media-kreatif') ? 'active' : '' }}">Media
                                                 Kreatif</a>
-                                            <a href="/bidang-kabinet/human-resource-development" class="dropdown-item fw-normal">Human Resource Development</a>
-                                            <a href="/bidang-kabinet/public-relation" class="dropdown-item fw-normal">Public
+                                            <a href="/bidang-kabinet/human-resource-development" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/human-resource-development') ? 'active' : '' }}">Human Resource Development</a>
+                                            <a href="/bidang-kabinet/public-relation" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/public-relation') ? 'active' : '' }}">Public
                                                 Relation</a>
-                                            <a href="/bidang-kabinet/technopreneurship" class="dropdown-item fw-normal">Technopreneurship</a>
+                                            <a href="/bidang-kabinet/technopreneurship" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/technopreneurship') ? 'active' : '' }}">Technopreneurship</a>
                                         </div>
                                     </div>
                                 </div>
@@ -106,9 +104,9 @@
                                         <div class="col-lg-12 nav-col">
                                             <h6 class="dropdown-header text-success">KATEGORI
                                             </h6>
-                                            <a href="/informasi/artikel" class="dropdown-item fw-normal">Artikel</a>
-                                            <a href="/informasi/lomba" class="dropdown-item fw-normal">Lomba</a>
-                                            <a href="/informasi/press-release" class="dropdown-item fw-normal">Press Relase</a>
+                                            <a href="/informasi/artikel" class="dropdown-item fw-normal {{ Request::is('informasi/artikel') ? 'active' : '' }}">Artikel</a>
+                                            <a href="/informasi/lomba" class="dropdown-item fw-normal {{ Request::is('informasi/lomba') ? 'active' : '' }}">Lomba</a>
+                                            <a href="/informasi/press-release" class="dropdown-item fw-normal {{ Request::is('informasi/press-release') ? 'active' : '' }}">Press Relase</a>
                                         </div>
                                     </div>
                                 </div>
