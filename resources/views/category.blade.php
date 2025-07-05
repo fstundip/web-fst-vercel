@@ -7,13 +7,16 @@
             <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/informasi/">Informasi</a>
+            <a class="/informasi/">Informasi</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a class="d-flex text-dark">{{$category->name}}</a>
         </li>
     </ol>
 
     <div class="card border-0 mb-4 card-blog">
         <div class="card-header border-0">
-            <h1 class="fw-bold">{{$category}} Forum Studi Teknik (FST)</h1>
+            <h1 class="fw-bold">{{$category->name}}</h1>
         </div>
         <div class="card-body">
             <div class="row">

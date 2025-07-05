@@ -7,7 +7,7 @@
             <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item">
-            <a class="/page/">Page</a>
+            <a class="/profil/">Profil</a>
         </li>
         <li class="breadcrumb-item">
             <a class="d-flex text-dark">{{$page->title}}</a>

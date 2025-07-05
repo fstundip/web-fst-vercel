@@ -4,11 +4,11 @@
 <div class="container">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active text-black">{{ $bidang }}</li>
+        <li class="breadcrumb-item active text-black">{{ $bidang->name }}</li>
     </ol>
     <div class="card border-0 mb-4 card-blog">
         <div class="card-header border-0">
-            <h1 class="fw-bold">{{ $bidang }}</h1>
+            <h1 class="fw-bold">{{ $bidang->name }}</h1>
         </div>
         <div class="card-body">
             <div class="row">

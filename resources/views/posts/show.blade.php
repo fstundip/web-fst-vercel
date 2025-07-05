@@ -7,7 +7,10 @@
             <a href="/home">Home</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/informasi/">Informasi</a>
+            <a class="/informasi/">Informasi</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="/informasi/{{ $post->category->slug }}">{{$post -> category -> name}}</a>
         </li>
         <li class="breadcrumb-item">
             <a class="d-flex text-dark">{{$post -> title}}</a>
