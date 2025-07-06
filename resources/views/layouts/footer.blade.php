@@ -6,7 +6,7 @@
                     <a class="navbar-brand" href="/">
                         <img src="{{ asset('img/fst-warna.png') }}" class="mb-3" alt="" width="100px">
                     </a>
-                    <div class="footer-brand text-white">
+                    <div class="footer-brand text-white mb-2">
                         Forum Studi Teknik Universitas Diponegoro
                     </div>
                     <div class="text-white">
@@ -16,7 +16,7 @@
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                            <div class="text-uppercase-expanded text-xs text-white mb-2">About Us</div>
+                            <div class="text-uppercase-expanded text-xs text-white mb-2">TENTANG KAMI</div>
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-4">
                                     <div class="text-white">
@@ -25,7 +25,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <div class="text-uppercase-expanded text-xs mb-2 text-white">Contact</div>
+                            <div class="text-uppercase-expanded text-xs mb-2 text-white">KONTAK</div>
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-2">
                                     <a class="navbar-brand text-white" href="mailto:fst.undip@gmail.com">fst.undip@gmail.com</a>
@@ -33,7 +33,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-6 col-md-6 mb-5 mb-lg-0">
-                            <div class="text-uppercase-expanded text-xs text-white mb-2">Social Media</div>
+                            <div class="text-uppercase-expanded text-xs text-white mb-2">Media Sosial</div>
                             <a href="https://www.youtube.com/@forumstuditeknikundip" target="_blank" rel="noopener noreferrer" class="me-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
                                 viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->

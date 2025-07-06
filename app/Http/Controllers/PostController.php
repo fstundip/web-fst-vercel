@@ -7,16 +7,6 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    
-    public function index()
-    {
-        $posts = Post::orderBy('created_at', 'desc')->get();
-
-        return view('posts.index', [
-            "title" => "Informasi - Forum Studi Teknik (FST)",
-            "posts" => $posts
-        ]);
-    }
 
     public function show($category_slug, $post_slug)
     {

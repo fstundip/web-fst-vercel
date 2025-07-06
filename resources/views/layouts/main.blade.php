@@ -104,9 +104,9 @@
                                         <div class="col-lg-12 nav-col">
                                             <h6 class="dropdown-header text-success">KATEGORI
                                             </h6>
-                                            <a href="/informasi/artikel" class="dropdown-item fw-normal {{ Request::is('informasi/artikel') ? 'active' : '' }}">Artikel</a>
-                                            <a href="/informasi/lomba" class="dropdown-item fw-normal {{ Request::is('informasi/lomba') ? 'active' : '' }}">Lomba</a>
-                                            <a href="/informasi/press-release" class="dropdown-item fw-normal {{ Request::is('informasi/press-release') ? 'active' : '' }}">Press Relase</a>
+                                            <a href="/informasi/artikel" class="dropdown-item fw-normal {{ Request::is('informasi/artikel*') ? 'active' : '' }}">Artikel</a>
+                                            <a href="/informasi/lomba" class="dropdown-item fw-normal {{ Request::is('informasi/lomba*') ? 'active' : '' }}">Lomba</a>
+                                            <a href="/informasi/press-release" class="dropdown-item fw-normal {{ Request::is('informasi/press-release*') ? 'active' : '' }}">Press Relase</a>
                                         </div>
                                     </div>
                                 </div>

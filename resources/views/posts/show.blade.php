@@ -1,21 +1,8 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="container">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="/home">Home</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a class="/informasi/">Informasi</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="/informasi/{{ $post->category->slug }}">{{$post -> category -> name}}</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a class="d-flex text-dark">{{$post -> title}}</a>
-        </li>
-    </ol>
+<div>
+    <h2 class="text-center text-white fw-semibold py-4 bg-succes">{{ $post->title }}</h2>
 
     <div class="card-blog row mb-4">
         <div class="card-post col-xl-8">
