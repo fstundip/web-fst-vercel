@@ -3,15 +3,13 @@
 @section('container')
 <div>
     <h2 class="text-center text-white fw-semibold py-4 bg-succes">{{ $bidang->name }}</h2>
-
-
     @foreach ($anggotaByRows as $row)
         <div class="container mb-4">
             <div class="row justify-content-center">
-                @foreach ($row->chunk(3) as $chunk)
+                @foreach ($row->chunk(4) as $chunk)
                     <div class="row justify-content-center mb-1">
                         @foreach ($chunk as $item)
-                            <div class="col-md-6 col-lg-4 text-center text-dark mb-1">
+                            <div class="col-md-6 col-lg-3 text-center text-dark mb-1">
                                 <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
                                     class="img-fluid mb-3"
                                     style="width: 225px; height:300px; object-fit: cover; object-position: center top;">

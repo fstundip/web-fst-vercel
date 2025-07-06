@@ -46,7 +46,7 @@
                         <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
                     </li>
                     <li class="nav-item dropdown dropdown-xl no-caret show">
-                        <a class="nav-link dropdown-toggle {{ Request::is('visi-misi', 'nilai-nilai-inti', 'logo-kabinet', 'bidang-kabinet*') ? 'active px-3' : '' }}" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle {{ Request::is('visi-misi-kabinet', 'nilai-kabinet', 'budaya-kabinet', 'logo-kabinet', 'bidang-kabinet*') ? 'active px-3' : '' }}" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             Profil<svg class="svg-inline--fa fa-chevron-right fa-w-10 dropdown-arrow ms-10" aria-hidden="true"
                                 focusable="false" data-prefix="fas" data-icon="chevron-right" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
@@ -73,14 +73,15 @@
                                             <h6 class="dropdown-header text-success">BIDANG KABINET FST UNDIP
                                             </h6>
                                             <a href="/bidang-kabinet/pengurus-harian" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/pengurus-harian') ? 'active' : '' }}">Pengurus Harian</a>
-                                            <a href="/bidang-kabinet/edukasi" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/edukasi') ? 'active' : '' }}">Edukasi</a>
                                             <a href="/bidang-kabinet/riset" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/riset') ? 'active' : '' }}">Riset</a>
                                             <a href="/bidang-kabinet/media-kreatif" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/media-kreatif') ? 'active' : '' }}">Media
                                                 Kreatif</a>
-                                            <a href="/bidang-kabinet/human-resource-development" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/human-resource-development') ? 'active' : '' }}">Human Resource Development</a>
                                             <a href="/bidang-kabinet/public-relation" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/public-relation') ? 'active' : '' }}">Public
                                                 Relation</a>
+                                            <a href="/bidang-kabinet/human-resource-development" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/human-resource-development') ? 'active' : '' }}">Human Resource Development</a>
+                                            <a href="/bidang-kabinet/edukasi" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/edukasi') ? 'active' : '' }}">Edukasi</a>
                                             <a href="/bidang-kabinet/technopreneurship" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/technopreneurship') ? 'active' : '' }}">Technopreneurship</a>
+                                            <a href="/bidang-kabinet/internal-champion-team" class="dropdown-item fw-normal {{ Request::is('bidang-kabinet/internal-champion-team') ? 'active' : '' }}">Internal Champion Team</a>
                                         </div>
                                     </div>
                                 </div>
