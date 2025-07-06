@@ -31,24 +31,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/categories') ? 'active' : ''}}"
-                        href="/dashboard/categories">
-                        <svg class="bi">
-                            <use xlink:href="#file-earmark" />
-                        </svg>
-                        Categories
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/posts') ? 'active' : ''}}"
-                        href="/dashboard/posts">
-                        <svg class="bi">
-                            <use xlink:href="#file-earmark" />
-                        </svg>
-                        Posts
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/pages') ? 'active' : ''}}"
                         href="/dashboard/pages">
                         <svg class="bi">
@@ -100,6 +82,24 @@
                             <use xlink:href="#file-earmark" />
                         </svg>
                         Angkatans
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/categories') ? 'active' : ''}}"
+                        href="/dashboard/categories">
+                        <svg class="bi">
+                            <use xlink:href="#file-earmark" />
+                        </svg>
+                        Categories
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-black {{Request::is('dashboard/posts') ? 'active' : ''}}"
+                        href="/dashboard/posts">
+                        <svg class="bi">
+                            <use xlink:href="#file-earmark" />
+                        </svg>
+                        Posts
                     </a>
                 </li>
             </ul>
