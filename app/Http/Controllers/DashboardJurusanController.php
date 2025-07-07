@@ -10,10 +10,17 @@ class DashboardJurusanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Jurusan::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
         return view('dashboard.jurusan-kabinet.index', [
-            'jurusan' => Jurusan::all()
+            'jurusan' => $query->get()
         ]);
     }
 

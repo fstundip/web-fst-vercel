@@ -11,10 +11,21 @@ class DashboardPageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Page::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%')
+                ->orWhere('slug', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%');
+            });
+        }
+
         return view('dashboard.pages.index', [
-            'page' => Page::all()
+            'page' => $query->get()
         ]);
     }
 

@@ -11,10 +11,21 @@ class DashboardBidangController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Bidang::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%')
+                ->orWhere('slug', 'like', '%' . $search . '%')
+                ->orWhere('description', 'like', '%' . $search . '%');
+            });
+        }
+
         return view('dashboard.bidang-kabinet.index', [
-            'bidang' => Bidang::all()
+            'bidang' => $query->get()
         ]);
     }
 

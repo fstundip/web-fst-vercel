@@ -39,6 +39,11 @@
     @endif
     <div>
         <a href="/dashboard/anggota-kabinet/create" class="btn btn-primary mb-3">Create New Anggota</a>
+        <form action="/dashboard/anggota-kabinet" method="GET" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Cari Anggota" value="{{ request('search') }}">
+            <button class="btn btn-outline-secondary" type="submit">Cari</button>
+        </div>
     </div>
     <div class="table-responsive small">
         <table class="table table-striped table-sm">

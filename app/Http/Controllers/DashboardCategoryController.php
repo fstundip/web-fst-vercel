@@ -11,10 +11,20 @@ class DashboardCategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Category::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%')
+                ->orWhere('slug', 'like', '%' . $search . '%');
+            });
+        }
+        
         return view('dashboard.categories.index', [
-            'category' => Category::all()
+            'category' => $query->get()
         ]);
     }
 

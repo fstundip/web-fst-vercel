@@ -14,10 +14,24 @@ class DashboardPostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Post::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%')
+                ->orWhere('slug', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%');
+            })
+            ->orWhereHas('category', function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%');
+            });
+        }
+        
         return view('dashboard.posts.index', [
-            'posts' => Post::all()
+            'posts' => $query->get()
         ]);
     }
 

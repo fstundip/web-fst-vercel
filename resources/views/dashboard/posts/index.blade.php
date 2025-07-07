@@ -39,6 +39,11 @@
     @endif
     <div>
         <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create New Post</a>
+        <form action="/dashboard/posts" method="GET" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Cari Post" value="{{ request('search') }}">
+            <button class="btn btn-outline-secondary" type="submit">Cari</button>
+        </div>
     </div>
     <div class="table-responsive small">
         <table class="table table-striped table-sm">
@@ -49,7 +54,6 @@
                     <th scope="col-3">Title</th>
                     <th scope="col-3">Slug</th>
                     <th scope="col-3">Category</th>
-                    <th scope="col-3">Excerpt</th>
                     <th scope="col-3">Action</th>
                 </tr>
             </thead>
@@ -63,7 +67,6 @@
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->slug }}</td>
                     <td>{{ $post->category->name }}</td>
-                    <td>{{ $post->excerpt }}</td>
                     <td>
                         <a href="/informasi/{{ $post->category->slug }}/{{ $post->slug }}" class="badge bg-primary"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"

@@ -15,10 +15,31 @@ class DashboardAnggotaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Anggota::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%'); 
+            })
+            ->orWhereHas('bidang', function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%');
+            })
+            ->orWhereHas('jabatan', function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%');
+            })
+            ->orWhereHas('jurusan', function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%');
+            })
+                ->orWhereHas('angkatan', function ($q) use ($search) {
+                $q->where('tahun', 'like', '%' . $search . '%');
+            });
+        }
+
         return view('dashboard.anggota-kabinet.index', [
-            'anggota' => Anggota::all()
+            'anggota' => $query->get()
         ]);
     }
 

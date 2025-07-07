@@ -10,10 +10,17 @@ class DashboardAngkatanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Angkatan::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('tahun', 'like', '%' . $search . '%');
+        }
+
         return view('dashboard.angkatan-kabinet.index', [
-            'angkatan' => Angkatan::all()
+            'angkatan' => $query->get()
         ]);
     }
 
