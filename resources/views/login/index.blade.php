@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="container mt-3 mb-3">
+<div class="container mt-3 mb-3" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <main class="form-signin w-100 m-auto d-flex align-items-center justify-content-center">
         <form class="card border-0 p-4" action="/admin/login" method="post">
             @csrf

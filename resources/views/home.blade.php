@@ -1,13 +1,13 @@
 @extends('layouts.main')
 @section('container')
-<section class="home mb-lg-0" id="home">
+<section class="home mb-lg-0" id="home" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <div class="container">
         <img src="img/fst-warna.png" alt="" width="150px" class="mb-4">
         <h1>FORUM STUDI TEKNIK</h1>
     </div>
 </section>
 
-<section class="mt-lg-0">
+<section class="mt-lg-0" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <div class="container">
         <div class="about-content">
             <h3 class="text-black fw-bold"><b class="text-success"> About</b> Forum Studi Teknik </h3>
@@ -19,7 +19,7 @@
     </div>
 </section>
 
-<section class="mt-lg-0">
+<section class="mt-lg-0" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <div class="container">
         <div class="orbit-embed">
             <h3 class="text-black fw-bold"><b class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="30" 
@@ -37,7 +37,7 @@
     </div>
 </section>
 
-<section class="mt-lg-0">
+<section class="mt-lg-0" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <div class="container">
         <div class="orbit-embed">
             <h3 class="text-black fw-bold"><b class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="30"

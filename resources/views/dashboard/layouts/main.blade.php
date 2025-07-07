@@ -18,12 +18,12 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
+        <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             @include('dashboard.layouts.sidebar')
         </div>
 
-        <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             @yield('container')
         </main>
     </div>

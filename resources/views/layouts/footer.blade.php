@@ -1,4 +1,4 @@
-<div class="footer-content">
+<div class="footer-content" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <footer class="footer pt-5 pb-5 mt-auto bg-succes footer-dark">
         <div class="container">
             <div class="row">
