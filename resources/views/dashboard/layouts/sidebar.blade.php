@@ -1,9 +1,9 @@
 <div class="sidebar border border-right col-md-3 col-lg-3 p-0 bg-body-tertiary">
-    <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu"
-        aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-md offcanvas-start bg-body-tertiary" tabindex="-1" id="offcanvas"
+        data-bs-keyboard="false" data-bs-backdrop="true">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu"
+            <h6 class="offcanvas-title" id="offcanvasLabel">Menu</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas"
                 aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
@@ -56,7 +56,7 @@
                         Pages
                     </a>
                 </li>
-                <h6 class="dropdown-header text-success fw-semibold my-2 ms-5">ANGGOTA & BIDANG KABINET</h6>
+                <h6 class="dropdown-header text-success fw-semibold my-2 ms-5">BIDANG KABINET</h6>
                 <li class="nav-item mx-5 {{ Request::is('dashboard/anggota-kabinet') ? 'bg-light rounded' : '' }}">
                     <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/anggota-kabinet') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/anggota-kabinet">

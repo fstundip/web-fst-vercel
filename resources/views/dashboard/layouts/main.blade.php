@@ -18,15 +18,25 @@
 </head>
 
 <body>
+    <!-- Tombol toggle sidebar (hanya muncul di layar kecil) -->
+    <button class="btn d-md-none position-absolute top-0 start-0 m-3 z-3" 
+        type="button" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvas" 
+        aria-controls="offcanvas">
+        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-filter-right"
+            viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path 
+                d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+        </svg>
+    </button>
     <div class="container-fluid" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
         <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             @include('dashboard.layouts.sidebar')
         </div>
-
-        <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
+        <main class="col-md-9 ms-sm-auto col-lg-9" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             @yield('container')
         </main>
-    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
