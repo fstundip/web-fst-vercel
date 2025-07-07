@@ -24,7 +24,7 @@
         </li>
     </ul>
 </div>
-<div class="d-flex align-items-center justify-content-center" style="min-height: 70vh; background-color: #d4edda; color: #155724;">
+<div class="d-flex align-items-center justify-content-center py-5" style="height: 500px; background-color: #d4edda; color: #155724;">
     <div class="card shadow-lg rounded-4 p-4 text-center" style="max-width: 480px; width: 100%;">
         <h5 class="fw-bold mb-3">Version Control</h5>
         <p class="mb-3">Check this GitHub repository.</p>
@@ -37,7 +37,4 @@
         <a href="https://github.com/fstundip/web-fst" target="_blank" class="d-block text-success fw-semibold">https://github.com/fstundip/web-fst</a>
     </div>
 </div>
-
-
-<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 @endsection

@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
+                        <a class="nav-link {{ Request::is('/') ? 'active px-3' : '' }}" href="/">Beranda</a>
                     </li>
                     <li class="nav-item dropdown dropdown-xl no-caret show">
                         <a class="nav-link dropdown-toggle {{ Request::is('visi-misi-kabinet', 'nilai-kabinet', 'budaya-kabinet', 'logo-kabinet', 'bidang-kabinet*') ? 'active px-3' : '' }}" href="#" data-bs-toggle="dropdown" aria-expanded="false">

@@ -160,7 +160,7 @@
                         Posts
                     </a>
                 </li>
-                <li class="nav-item mx-5 {{ Request::is('dashboard/categories') ? 'bg-light rounded' : '' }}">
+                <li class="nav-item mx-5 mb-3 {{ Request::is('dashboard/categories') ? 'bg-light rounded' : '' }}">
                     <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/categories') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/categories">
                         @if(Request::is('dashboard/categories'))
