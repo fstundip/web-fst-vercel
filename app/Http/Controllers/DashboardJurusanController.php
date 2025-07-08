@@ -20,7 +20,7 @@ class DashboardJurusanController extends Controller
         }
 
         return view('dashboard.jurusan-kabinet.index', [
-            'jurusan' => $query->get()
+            'jurusan' => $query->paginate(10)
         ]);
     }
 

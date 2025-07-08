@@ -20,7 +20,7 @@ class DashboardAngkatanController extends Controller
         }
 
         return view('dashboard.angkatan-kabinet.index', [
-            'angkatan' => $query->get()
+            'angkatan' => $query->paginate(10)
         ]);
     }
 

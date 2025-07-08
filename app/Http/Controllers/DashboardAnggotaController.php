@@ -39,7 +39,7 @@ class DashboardAnggotaController extends Controller
         }
 
         return view('dashboard.anggota-kabinet.index', [
-            'anggota' => $query->get()
+            'anggota' => $query->paginate(5)
         ]);
     }
 

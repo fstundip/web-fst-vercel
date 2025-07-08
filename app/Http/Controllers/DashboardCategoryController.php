@@ -24,7 +24,7 @@ class DashboardCategoryController extends Controller
         }
         
         return view('dashboard.categories.index', [
-            'category' => $query->get()
+            'category' => $query->paginate(10)
         ]);
     }
 

@@ -31,7 +31,7 @@ class DashboardPostController extends Controller
         }
         
         return view('dashboard.posts.index', [
-            'posts' => $query->get()
+            'post' => $query->paginate(8)
         ]);
     }
 

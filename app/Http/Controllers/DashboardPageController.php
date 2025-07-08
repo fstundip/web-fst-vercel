@@ -25,7 +25,7 @@ class DashboardPageController extends Controller
         }
 
         return view('dashboard.pages.index', [
-            'page' => $query->get()
+            'page' => $query->paginate(10)
         ]);
     }
 

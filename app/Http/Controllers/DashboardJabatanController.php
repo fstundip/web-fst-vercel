@@ -23,7 +23,7 @@ class DashboardJabatanController extends Controller
         }
 
         return view('dashboard.jabatan-kabinet.index', [
-            'jabatan' => $query->get()
+            'jabatan' => $query->paginate(10)
         ]);
     }
 

@@ -25,7 +25,7 @@ class DashboardBidangController extends Controller
         }
 
         return view('dashboard.bidang-kabinet.index', [
-            'bidang' => $query->get()
+            'bidang' => $query->paginate(10)
         ]);
     }
 

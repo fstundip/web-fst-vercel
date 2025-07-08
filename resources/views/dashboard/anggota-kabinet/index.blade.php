@@ -64,25 +64,25 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($anggota as $anggota)
+                @foreach ($anggota as $item)
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>
-                        <img src="{{ asset('storage/' . $anggota->image) }}" alt="{{ $anggota->name }}" width="50" class="img-thumbnail">
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}" width="50" class="img-thumbnail">
                     </td>
-                    <td>{{ $anggota->name }}</td>
-                    <td>{{ $anggota->bidang->name }}</td>
-                    <td>{{ $anggota->jabatan->name }}</td>
-                    <td>{{ $anggota->jurusan->name }}</td>
-                    <td>{{ $anggota->angkatan->tahun }}</td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->bidang->name }}</td>
+                    <td>{{ $item->jabatan->name }}</td>
+                    <td>{{ $item->jurusan->name }}</td>
+                    <td>{{ $item->angkatan->tahun }}</td>
                     <td>
-                        <a href="/dashboard/anggota-kabinet/{{$anggota->id}}/edit" class="badge bg-warning mx-1"><svg
+                        <a href="/dashboard/anggota-kabinet/{{$item->id}}/edit" class="badge bg-warning mx-1"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                 class="bi bi-pencil" viewBox="0 0 16 16">
                                 <path
                                     d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
                             </svg></a>
-                        <form action="/dashboard/anggota-kabinet/{{ $anggota->id }}" method="post" class="d-inline">
+                        <form action="/dashboard/anggota-kabinet/{{ $item->id }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
                             <button class="badge bg-danger border-0"
@@ -100,6 +100,9 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <div class="justify-content-center">
+        {{ $anggota->withQueryString()->links() }}
     </div>
 </div>
 @endsection
