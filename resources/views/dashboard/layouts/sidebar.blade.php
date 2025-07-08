@@ -39,10 +39,10 @@
                     </a>
                 </li>
                 <h6 class="dropdown-header text-success fw-semibold my-2 ms-5">PROFIL</h6>
-                <li class="nav-item mx-5 {{ Request::is('dashboard/pages') ? 'bg-light rounded' : '' }}">
-                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/pages') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
+                <li class="nav-item mx-5 {{ Request::is('dashboard/pages*') ? 'bg-light rounded' : '' }}">
+                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/pages*') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/pages">
-                        @if(Request::is('dashboard/pages'))
+                        @if(Request::is('dashboard/pages*'))
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="ms-3"
                         viewBox="0 0 448 512" fill="green"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                         <path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/>
@@ -57,10 +57,10 @@
                     </a>
                 </li>
                 <h6 class="dropdown-header text-success fw-semibold my-2 ms-5">BIDANG KABINET</h6>
-                <li class="nav-item mx-5 {{ Request::is('dashboard/anggota-kabinet') ? 'bg-light rounded' : '' }}">
-                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/anggota-kabinet') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
+                <li class="nav-item mx-5 {{ Request::is('dashboard/anggota-kabinet*') ? 'bg-light rounded' : '' }}">
+                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/anggota-kabinet*') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/anggota-kabinet">
-                        @if(Request::is('dashboard/anggota-kabinet'))
+                        @if(Request::is('dashboard/anggota-kabinet*'))
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="ms-3"
                         viewBox="0 0 448 512" fill="green"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                         <path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/>
@@ -74,10 +74,10 @@
                         Anggotas
                     </a>
                 </li>
-                <li class="nav-item mx-5 {{ Request::is('dashboard/bidang-kabinet') ? 'bg-light rounded' : '' }}">
-                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/bidang-kabinet') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
+                <li class="nav-item mx-5 {{ Request::is('dashboard/bidang-kabinet*') ? 'bg-light rounded' : '' }}">
+                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/bidang-kabinet*') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/bidang-kabinet">
-                        @if(Request::is('dashboard/bidang-kabinet'))
+                        @if(Request::is('dashboard/bidang-kabinet*'))
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="ms-3"
                         viewBox="0 0 448 512" fill="green"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                         <path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/>
@@ -91,10 +91,10 @@
                         Bidangs
                     </a>
                 </li>
-                <li class="nav-item mx-5 {{ Request::is('dashboard/jabatan-kabinet') ? 'bg-light rounded' : '' }}">
-                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/jabatan-kabinet') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
+                <li class="nav-item mx-5 {{ Request::is('dashboard/jabatan-kabinet*') ? 'bg-light rounded' : '' }}">
+                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/jabatan-kabinet*') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/jabatan-kabinet">
-                        @if(Request::is('dashboard/jabatan-kabinet'))
+                        @if(Request::is('dashboard/jabatan-kabinet*'))
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="ms-3"
                         viewBox="0 0 448 512" fill="green"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                         <path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/>
@@ -108,10 +108,10 @@
                         Jabatans
                     </a>
                 </li>
-                <li class="nav-item mx-5 {{ Request::is('dashboard/jurusan-kabinet') ? 'bg-light rounded' : '' }}">
-                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/jurusan-kabinet') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
+                <li class="nav-item mx-5 {{ Request::is('dashboard/jurusan-kabinet*') ? 'bg-light rounded' : '' }}">
+                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/jurusan-kabinet*') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/jurusan-kabinet">
-                        @if(Request::is('dashboard/jurusan-kabinet'))
+                        @if(Request::is('dashboard/jurusan-kabinet*'))
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="ms-3"
                         viewBox="0 0 448 512" fill="green"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                         <path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/>
@@ -125,10 +125,10 @@
                         Jurusans
                     </a>
                 </li>
-                <li class="nav-item mx-5 {{ Request::is('dashboard/angkatan-kabinet') ? 'bg-light rounded' : '' }}">
-                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/angkatan-kabinet') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
+                <li class="nav-item mx-5 {{ Request::is('dashboard/angkatan-kabinet*') ? 'bg-light rounded' : '' }}">
+                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/angkatan-kabinet*') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/angkatan-kabinet">
-                        @if(Request::is('dashboard/angkatan-kabinet'))
+                        @if(Request::is('dashboard/angkatan-kabinet*'))
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="ms-3"
                         viewBox="0 0 448 512" fill="green"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                         <path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/>
@@ -143,10 +143,10 @@
                     </a>
                 </li>
                 <h6 class="dropdown-header text-success fw-semibold my-2 ms-5">INFORMASI</h6>
-                <li class="nav-item mx-5 {{ Request::is('dashboard/posts') ? 'bg-light rounded' : '' }}">
-                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
+                <li class="nav-item mx-5 {{ Request::is('dashboard/posts*') ? 'bg-light rounded' : '' }}">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts*') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/posts">
-                        @if(Request::is('dashboard/posts'))
+                        @if(Request::is('dashboard/posts*'))
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="ms-3"
                         viewBox="0 0 448 512" fill="green"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                         <path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/>
@@ -160,10 +160,10 @@
                         Posts
                     </a>
                 </li>
-                <li class="nav-item mx-5 mb-3 {{ Request::is('dashboard/categories') ? 'bg-light rounded' : '' }}">
-                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/categories') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
+                <li class="nav-item mx-5 mb-3 {{ Request::is('dashboard/categories*') ? 'bg-light rounded' : '' }}">
+                    <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/categories*') ? 'text-success fw-normal' : 'text-black fw-normal' }}"
                         href="/dashboard/categories">
-                        @if(Request::is('dashboard/categories'))
+                        @if(Request::is('dashboard/categories*'))
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="ms-3"
                         viewBox="0 0 448 512" fill="green"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                         <path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/>

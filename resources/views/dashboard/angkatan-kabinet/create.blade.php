@@ -4,14 +4,18 @@
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <!-- CONTENT -->
-    <h1 class="fw-bold">Create New Angkatan</h1>
+    <div class=" w-100 text-center">
+        <span class="badge bg-success fs-5 py-2">
+            Create New Angkatan
+        </span>
+    </div>
     <!-- ENDCONTENT -->
 
     <!-- SIDEBAR -->
     <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Welcome back, {{auth()->user()->name}}!
+                {{auth()->user()->name}}!
             </a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/">Back to Web</a></li>
