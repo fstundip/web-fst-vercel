@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BidangController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
@@ -31,11 +32,7 @@ use App\Http\Controllers\DashboardAngkatanController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Forum Studi Teknik (FST)"
-    ]);
-});
+Route::get('/', [HomeController::class, 'home']);
 
 Route::get('/profile', function () {
     return view('profile', [

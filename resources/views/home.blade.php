@@ -21,7 +21,39 @@
 
 <section class="mt-lg-0" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <div class="container">
-        <div class="orbit-embed">
+        <div class="about-content">
+            <h3 class="text-black fw-bold"><b class="text-success"> Galeri</b> Forum Studi Teknik </h3>
+            <hr class="border border-success border-3" width="90px">
+
+            {{-- Featured image --}}
+            @if($featured)
+            <div class="my-4">
+                <img src="{{ asset('storage/' . $featured->image) }}" alt="{{ $featured->title }}"
+                     class="img-fluid rounded-4 shadow"
+                     style="max-height: 450px; aspect-ratio: 16/9; object-fit: cover; object-position: center;">
+            </div>
+            @endif
+
+            {{-- Galeri Grid --}}
+            <div class="row justify-content-center">
+                @forelse($post as $item)
+                    <div class="col-3">
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="img-fluid rounded-4 shadow"
+                        style="aspect-ratio: 16/9; object-fit: cover; object-position: center;">
+                    </div>
+                @empty
+                    <div class="alert text-center" role="alert" style="font-size: clamp(0.8rem, 1.5vw, 1rem); background-color: #d4edda; color: #155724;">
+                        Tunggu Kegiatan Kami Selanjutnya...
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-lg-0" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
+    <div class="container">
+        <div class="comprof-embed">
             <h3 class="text-black fw-bold"><b class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="30" 
                         height="30" fill="currentColor" class="bi bi-youtube" viewBox="0 0 576 512">
                         <path 
