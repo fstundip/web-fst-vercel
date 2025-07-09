@@ -9,7 +9,7 @@
                 Belum ada postingan dalam kategori <strong>{{ $category->name }}</strong>.
             </div>
         @else
-        <div class="row justify-content-center" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
+        <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             @foreach ($post as $postItem)
             <div class="col-6 col-sm-4 col-md-4 col-lg-4 mb-4">
                 <a href="/informasi/{{ $postItem->category->slug }}/{{ $postItem->slug }}" class="card border-0 h-100 text-decoration-none rounded-4">
