@@ -34,12 +34,6 @@ use App\Http\Controllers\DashboardAngkatanController;
 
 Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/profile', function () {
-    return view('profile', [
-        "title" => "Profile - Forum Studi Teknik (FST)"
-    ]);
-});
-
 Route::get('/admin/login', [LoginController::class, 'index']);
 Route::post('/admin/login', [LoginController::class, 'authenticate']);
 Route::post('/admin/logout', [LoginController::class, 'logout']);
