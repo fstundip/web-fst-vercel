@@ -3,12 +3,17 @@
 @section('container')
 <div style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <h2 class="text-center text-white fw-semibold py-4 bg-succes">{{ $category->name }}</h2>
-    <div class="container mt-4">
+    <div class="container mt-3">
         @if ($post->isEmpty())
             <div class="alert text-center" role="alert" style="font-size: clamp(0.8rem, 1.5vw, 1rem); background-color: #d4edda; color: #155724;">
                 Belum ada postingan dalam kategori <strong>{{ $category->name }}</strong>.
             </div>
         @else
+        <form action="{{ url()->current() }}" method="GET" class="mb-3">
+        <div class="input-group mb-3">
+            <input type="text" name="search" class="form-control" placeholder="Cari Informasi" value="{{ request('search') }}">
+            <button class="btn btn-outline-secondary" type="submit">Cari</button>
+        </div>
         <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             @foreach ($post as $postItem)
             <div class="col-6 col-sm-4 col-md-4 col-lg-4 mb-4">
