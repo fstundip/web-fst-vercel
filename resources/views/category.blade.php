@@ -9,10 +9,31 @@
                 Belum ada postingan dalam kategori <strong>{{ $category->name }}</strong>.
             </div>
         @else
+        <style>
+            /* Hilangkan efek biru pada input saat focus */
+            .input-group .form-control:focus {
+                box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+            }
+
+            .btn-custom {
+                background-color: #08ac6c; /* hijau muda */
+                border: 1px solid #08ac6c;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn-custom:hover {
+                background-color: #157347; /* hijau lebih gelap */
+                color: #fff;
+            }
+
+            .btn-custom:focus {
+                box-shadow: none;
+            }
+        </style>
         <form action="{{ url()->current() }}" method="GET" class="mb-3">
         <div class="input-group mb-3">
-            <input type="text" name="search" class="form-control" placeholder="Cari Informasi" value="{{ request('search') }}">
-            <button class="btn btn-outline-secondary" type="submit">Cari</button>
+            <input type="text" name="search" class="form-control border-success" placeholder="Cari Informasi" value="{{ request('search') }}">
+            <button class="btn btn-custom text-white fw-semibold" type="submit">Cari</button>
         </div>
         <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             @foreach ($post as $postItem)

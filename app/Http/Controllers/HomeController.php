@@ -14,7 +14,7 @@ class HomeController extends Controller
             $query->where('name', 'Press Release');
         })
         ->whereNotNull('image')
-        ->get();
+        ->paginate(15);
 
         return view('home', [
             "title" => "Forum Studi Teknik (FST)",
