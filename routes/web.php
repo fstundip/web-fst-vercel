@@ -33,6 +33,11 @@ use App\Http\Controllers\DashboardAngkatanController;
 */
 
 Route::get('/', [HomeController::class, 'home']);
+Route::get('/f-store', function () {
+    return view('fstore', [
+        "title" => "F-Store"
+    ]);
+});
 
 Route::get('/admin/login', [LoginController::class, 'index']);
 Route::post('/admin/login', [LoginController::class, 'authenticate']);

@@ -114,6 +114,9 @@
                             </div>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('f-store') ? 'active px-3' : '' }}" href="/f-store">F-Store</a>
+                    </li>
                 </ul>
 
                 @auth

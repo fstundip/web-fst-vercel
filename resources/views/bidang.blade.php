@@ -9,7 +9,7 @@
                 <button class="btn-tab w-100 border-0 border-bottom border-4 pb-1 border-0 bg-transparent fs-5 fw-semibold text-success border-success active-tab" onclick="showTab('deskripsi')">Deskripsi</button>
             </div>
             <div class="col-6 p-0" id="col-anggota">
-                <button class="btn-tab w-100 border-0 border-bottom border-4 pb-1 border-0 bg-transparent fs-5 fw-semibold text-dark" onclick="showTab('anggota')">Anggota</button>
+                <button class="btn-tab w-100 border-0 border-bottom border-4 pb-1 border-0 bg-transparent fs-5 fw-semibold text-muted" onclick="showTab('anggota')">Anggota</button>
             </div>
         </div>
     </div>
@@ -52,11 +52,11 @@
         const buttons = document.querySelectorAll('.btn-tab');
         buttons.forEach(function(btn) {
             btn.classList.remove('text-success', 'active-tab', 'border-success');
-            btn.classList.add('text-dark');
+            btn.classList.add('text-muted');
         });
 
         const activeButton = document.querySelector(`.btn-tab[onclick="showTab('${tab}')"]`);
-        activeButton.classList.remove('text-dark');
+        activeButton.classList.remove('text-muted');
         activeButton.classList.add('text-success', 'active-tab', 'border-success');
     }
 </script>
