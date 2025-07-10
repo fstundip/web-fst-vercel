@@ -46,8 +46,8 @@
             <label for="bidang" class="form-label">Category</label>
             <select class="form-select" name="category" required>
                 <option value="" disabled {{ old('category', $product->category) == '' ? 'selected' : '' }}>-- Pilih Category --</option>
-                <option value="food-n-beverages" {{ old('category', $product->category) == 'food-n-beverages' ? 'selected' : '' }}>Food & Beverages</option>
-                <option value="exclusive-product" {{ old('category', $product->category) == 'exclusive-product' ? 'selected' : '' }}>Exclusive Product</option>
+                <option value="Food & Beverages" {{ old('category', $product->category) == 'Food & Beverages' ? 'selected' : '' }}>Food & Beverages</option>
+                <option value="Exclusive Product" {{ old('category', $product->category) == 'Exclusive Product' ? 'selected' : '' }}>Exclusive Product</option>
             </select>
         </div>
         <div class="mb-3">

@@ -21,6 +21,7 @@ use App\Http\Controllers\DashboardJabatanController;
 use App\Http\Controllers\DashboardJurusanController;
 use App\Http\Controllers\DashboardAngkatanController;
 use App\Http\Controllers\DashboardProductController;
+use App\Http\Controllers\FStoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,11 +35,7 @@ use App\Http\Controllers\DashboardProductController;
 */
 
 Route::get('/', [HomeController::class, 'home']);
-Route::get('/f-store', function () {
-    return view('fstore', [
-        "title" => "F-Store"
-    ]);
-});
+Route::get('/f-store', [FStoreController::class, 'fstore']);
 
 Route::get('/admin/login', [LoginController::class, 'index']);
 Route::post('/admin/login', [LoginController::class, 'authenticate']);

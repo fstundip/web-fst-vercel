@@ -44,8 +44,8 @@
             <label for="bidang" class="form-label">Category</label>
             <select class="form-select" name="category" required>
                 <option value="" selected disabled>-- Pilih Category --</option>
-                <option value="food-n-beverages">Food & Beverages</option>
-                <option value="exclusive-product">Exclusive Product</option>
+                <option value="Food & Beverages">Food & Beverages</option>
+                <option value="Exclusive Product">Exclusive Product</option>
             </select>
         </div>
         <div class="mb-3">

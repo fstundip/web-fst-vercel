@@ -27,7 +27,7 @@
             }
 
             .btn-custom:focus {
-                box-shadow: none;
+                box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);;
             }
         </style>
         <form action="{{ url()->current() }}" method="GET" class="mb-3">
@@ -39,7 +39,7 @@
             @foreach ($post as $postItem)
             <div class="col-6 col-sm-4 col-md-4 col-lg-4 mb-4">
                 <a href="/informasi/{{ $postItem->category->slug }}/{{ $postItem->slug }}" class="card border-0 h-100 text-decoration-none rounded-4">
-                <img src="{{ asset('storage/' . $postItem->image) }}" alt="{{ $postItem->title }}" class="img-fluid rounded-4" style="aspect-ratio: 16/9; object-fit: cover; object-position: center;">
+                    <img src="{{ asset('storage/' . $postItem->image) }}" alt="{{ $postItem->title }}" class="img-fluid rounded-4" style="aspect-ratio: 16/9; object-fit: cover; object-position: center;">
                 <div class="card-body text-dark">
                     <span class="badge bg-succes mb-2">{{ $category->name }}</span>
                     <p class="card-title fw-semibold d-sm-none">
