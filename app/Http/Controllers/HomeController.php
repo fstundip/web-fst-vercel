@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Report;
 
 class HomeController extends Controller
 {
@@ -16,9 +17,12 @@ class HomeController extends Controller
         ->whereNotNull('image')
         ->paginate(15);
 
+        $report = Report::latest('created_at')->take(3)->get();
+
         return view('home', [
             "title" => "Forum Studi Teknik (FST)",
-            "post" => $post
+            "post" => $post,
+            "report" => $report
         ]);
     }
 }

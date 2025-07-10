@@ -45,6 +45,49 @@
 
 <section class="" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
     <div class="container">
+        <div class="about-content">
+            <h3 class="text-black fw-bold"><b class="text-success"> Report</b> Forum Studi Teknik </h3>
+            <hr class="border border-success border-3" width="90px">
+            @if ($report->isEmpty())
+                <div class="alert text-center" role="alert" style="background-color: #d4edda; color: #155724;">
+                    Belum ada report.
+                </div>
+            @else
+                <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
+                @foreach ($report as $item)
+                <div class="col-4">
+                    <style>
+                        .image-hover-wrapper {
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .image-hover-wrapper .overlay {
+                            background-color: rgba(0, 0, 0, 0.6); /* gelap saat hover */
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in-out;
+                        }
+
+                        .image-hover-wrapper:hover .overlay {
+                            opacity: 1;
+                        }
+                    </style>
+                    <a href="{{ $item->link }}" class="image-hover-wrapper position-relative d-block text-decoration-none">
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                            class="img-fluid" style="aspect-ratio: 4/5; object-fit: cover; object-position: center;">
+                        <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <div class="text-white text-center fw-bold fs-3 px-2">{{ $item->title }}</div>
+                        </div>
+                    </a>
+                </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+</section>
+
+<section class="" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
+    <div class="container">
         <div class="comprof-embed">
             <h3 class="text-black fw-bold"><b class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="30" 
                         height="30" fill="currentColor" class="bi bi-youtube" viewBox="0 0 576 512">
