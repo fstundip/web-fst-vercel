@@ -37,8 +37,8 @@
         </div>
         <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             @foreach ($post as $postItem)
-            <div class="col-6 col-sm-4 col-md-4 col-lg-4 mb-4">
-                <a href="/informasi/{{ $postItem->category->slug }}/{{ $postItem->slug }}" class="card border-0 h-100 text-decoration-none rounded-4">
+            <div class="col-6 col-sm-4 col-md-4 col-lg-4 mb-3">
+                <a href="/informasi/{{ $postItem->category->slug }}/{{ $postItem->slug }}" class="card border-0 h-100 text-decoration-none rounded-4" style=" box-shadow: 0 4px 8px #157347;">
                     <img src="{{ asset('storage/' . $postItem->image) }}" alt="{{ $postItem->title }}" class="img-fluid rounded-4" style="aspect-ratio: 16/9; object-fit: cover; object-position: center;">
                 <div class="card-body text-dark">
                     <span class="badge bg-succes mb-2">{{ $category->name }}</span>

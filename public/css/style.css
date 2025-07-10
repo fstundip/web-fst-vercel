@@ -125,12 +125,31 @@ nav .dropdown-menu a:active {
     min-height: 90vh !important;
     position: relative;
     overflow: hidden;
-    background-image: url(../img/fst-fotbar\(bnw\).jpg);
+    background-image: url(../img/fotbar-fst-tridaya.png);
     background-position: center 40%;
     background-size: cover;
 }
 
 .home h1 {
+    font-weight: 800;
+    color: #fff;
+    font-size: 48px;
+    text-shadow: 4px 4px 0px black;
+}
+
+.fstore {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh !important;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../img/fst-fotbar-bnw.jpg);
+    background-position: center 40%;
+    background-size: cover;
+}
+
+.fstore h1 {
     font-weight: 800;
     color: #fff;
     font-size: 48px;
@@ -161,6 +180,10 @@ nav .dropdown-menu a:active {
 }
 
 section .home {
+    padding-top: 8rem;
+}
+
+section .fstore {
     padding-top: 8rem;
 }
 
