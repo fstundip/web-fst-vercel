@@ -20,6 +20,7 @@ use App\Http\Controllers\DashboardBidangController;
 use App\Http\Controllers\DashboardJabatanController;
 use App\Http\Controllers\DashboardJurusanController;
 use App\Http\Controllers\DashboardAngkatanController;
+use App\Http\Controllers\DashboardProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,7 @@ Route::get('/dashboard', function () {
 Route::resource('/dashboard/categories', DashboardCategoryController::class)->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/pages', DashboardPageController::class)->middleware('auth');
+Route::resource('/dashboard/products', DashboardProductController::class)->middleware('auth');
 Route::resource('/dashboard/bidang-kabinet', DashboardBidangController::class)->middleware('auth');
 Route::resource('/dashboard/jabatan-kabinet', DashboardJabatanController::class)->middleware('auth');
 Route::resource('/dashboard/jurusan-kabinet', DashboardJurusanController::class)->middleware('auth');

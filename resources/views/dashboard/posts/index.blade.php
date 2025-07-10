@@ -45,8 +45,8 @@
         <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create New Post</a>
         <form action="/dashboard/posts" method="GET" class="mb-3">
         <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Cari Post" value="{{ request('search') }}">
-            <button class="btn btn-outline-secondary" type="submit">Cari</button>
+            <input type="text" name="search" class="form-control" placeholder="Search Post" value="{{ request('search') }}">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
         </div>
     </div>
     <div class="table-responsive small">

@@ -45,8 +45,8 @@
         <a href="/dashboard/categories/create" class="btn btn-primary mb-3">Create New Category</a>
         <form action="/dashboard/categories" method="GET" class="mb-3">
         <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Cari Category" value="{{ request('search') }}">
-            <button class="btn btn-outline-secondary" type="submit">Cari</button>
+            <input type="text" name="search" class="form-control" placeholder="Search Category" value="{{ request('search') }}">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
         </div>
     </div>
     <div class="table-responsive small">
@@ -54,7 +54,7 @@
             <thead>
                 <tr>
                     <th scope="col-3">#</th>
-                    <th scope="col-3">Nama</th>
+                    <th scope="col-3">Name</th>
                     <th scope="col-3">Slug</th>
                     <th scope="col-3">Action</th>
                 </tr>

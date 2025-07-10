@@ -6,7 +6,7 @@
     <!-- CONTENT -->
     <div class=" w-100 text-center">
         <span class="badge bg-success fs-5 py-2">
-            Create New Anggota
+            Create New Product
         </span>
     </div>
     <!-- ENDCONTENT -->
@@ -34,47 +34,23 @@
     <!-- SIDEBAR END -->
 </div>
 <div class="card p-4 border-0 shadow-sm">
-    <form method="post" action="/dashboard/anggota-kabinet" enctype="multipart/form-data">
+    <form method="post" action="/dashboard/products" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="mb-3">
-            <label for="bidang" class="form-label">Bidang</label>
-            <select class="form-select" name="bidang_id" required>
-                <option value="" selected disabled>-- Pilih Bidang --</option>
-                @foreach($bidang as $b)
-                <option value="{{$b->id}}">{{$b->name}}</option>
-                @endforeach
+            <label for="bidang" class="form-label">Category</label>
+            <select class="form-select" name="category" required>
+                <option value="" selected disabled>-- Pilih Category --</option>
+                <option value="food-n-beverages">Food & Beverages</option>
+                <option value="exclusive-product">Exclusive Product</option>
             </select>
         </div>
         <div class="mb-3">
-            <label for="jabatan" class="form-label">Jabatan</label>
-            <select class="form-select" name="jabatan_id" required>
-                <option value="" selected disabled>-- Pilih Jabatan --</option>
-                @foreach($jabatan as $jbt)
-                <option value="{{$jbt->id}}">{{$jbt->name}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="jurusan" class="form-label">Jurusan</label>
-            <select class="form-select" name="jurusan_id" required>
-                <option value="" selected disabled>-- Pilih Jurusan --</option>
-                @foreach($jurusan as $jrs)
-                <option value="{{$jrs->id}}">{{$jrs->name}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="angkatan" class="form-label">Angkatan</label>
-            <select class="form-select" name="angkatan_id" required>
-                <option value="" selected disabled>-- Pilih Angkatan --</option>
-                @foreach($angkatan as $akt)
-                <option value="{{$akt->id}}">{{$akt->tahun}}</option>
-                @endforeach
-            </select>
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" name="price" min="0" required>
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Post Image</label>

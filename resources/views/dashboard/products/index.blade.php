@@ -6,7 +6,7 @@
     <!-- CONTENT -->
     <div class=" w-100 text-center">
         <span class="badge bg-success fs-5 py-2">
-            Pages
+            Products
         </span>
     </div>
     <!-- ENDCONTENT -->
@@ -42,10 +42,10 @@
     </div>
     @endif
     <div>
-        <a href="/dashboard/pages/create" class="btn btn-primary mb-3">Create New Page</a>
-        <form action="/dashboard/pages" method="GET" class="mb-3">
+        <a href="/dashboard/products/create" class="btn btn-primary mb-3">Create New Product</a>
+        <form action="/dashboard/products" method="GET" class="mb-3">
         <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Search Page" value="{{ request('search') }}">
+            <input type="text" name="search" class="form-control" placeholder="Search Product" value="{{ request('search') }}">
             <button class="btn btn-outline-secondary" type="submit">Search</button>
         </div>
     </div>
@@ -54,33 +54,31 @@
             <thead>
                 <tr>
                     <th scope="col-3">#</th>
-                    <th scope="col-3">Title</th>
-                    <th scope="col-3">Slug</th>
+                    <th scope="col-3">Image</th>
+                    <th scope="col-3">Name</th>
+                    <th scope="col-3">Category</th>
+                    <th scope="col-3">Price</th>
                     <th scope="col-3">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($page as $item)
+                @foreach ($product as $item)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{ $item->title }}</td>
-                    <td>{{ $item->slug }}</td>
                     <td>
-                        <a href="/{{$item->slug}}" class="badge bg-primary"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
-                                <path
-                                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
-                            </svg></a>
-                        <a href="/dashboard/pages/{{$item->id}}/edit" class="badge bg-warning mx-1"><svg
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}" width="50" class="img-thumbnail">
+                    </td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->category }}</td>
+                    <td>{{ $item->price }}</td>
+                    <td>
+                        <a href="/dashboard/products/{{$item->id}}/edit" class="badge bg-warning mx-1"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                 class="bi bi-pencil" viewBox="0 0 16 16">
                                 <path
                                     d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
                             </svg></a>
-                        <form action="/dashboard/pages/{{$item->id}}" method="post" class="d-inline">
+                        <form action="/dashboard/products/{{ $item->id }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
                             <button class="badge bg-danger border-0"
@@ -100,7 +98,7 @@
         </table>
     </div>
     <div class="justify-content-center">
-        {{ $page->withQueryString()->links() }}
+        {{ $product->withQueryString()->links() }}
     </div>
 </div>
 @endsection

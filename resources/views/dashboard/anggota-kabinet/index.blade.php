@@ -45,8 +45,8 @@
         <a href="/dashboard/anggota-kabinet/create" class="btn btn-primary mb-3">Create New Anggota</a>
         <form action="/dashboard/anggota-kabinet" method="GET" class="mb-3">
         <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Cari Anggota" value="{{ request('search') }}">
-            <button class="btn btn-outline-secondary" type="submit">Cari</button>
+            <input type="text" name="search" class="form-control" placeholder="Search Anggota" value="{{ request('search') }}">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
         </div>
     </div>
     <div class="table-responsive small">
@@ -55,7 +55,7 @@
                 <tr>
                     <th scope="col-3">#</th>
                     <th scope="col-3">Image</th>
-                    <th scope="col-3">Nama</th>
+                    <th scope="col-3">Name</th>
                     <th scope="col-3">Bidang</th>
                     <th scope="col-3">Jabatan</th>
                     <th scope="col-3">Jurusan</th>
