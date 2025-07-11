@@ -10,7 +10,7 @@
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <div class="nav-link d-flex align-items-center justify-content-center gap-2">
-                        <img src="{{ asset('img/fst-warna.png') }}" alt="" width="50px">
+                        <img src="/img/fst-warna.png" alt="" width="50px">
                     </div>
                 </li>
                 <li class="nav-item">

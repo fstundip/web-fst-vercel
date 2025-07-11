@@ -7,8 +7,8 @@
     <title>{{$title}}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="icon" href="{{ asset('img/fst-warna.png') }}" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/fst-warna.png" type="image/png">
     <!-- font google -->
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('img/fst-warna.png') }}" alt="" width="50px">
+                <img src="/img/fst-warna.png" alt="" width="50px">
             </a>
             <div class="logo-text front mt-2">
                 <h6 class="my-0" style="margin-bottom: 0 !important; color:#000; font-weight:800">FORUM STUDI TEKNIK
