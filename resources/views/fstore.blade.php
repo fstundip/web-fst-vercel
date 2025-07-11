@@ -34,7 +34,7 @@
     <div class="container mt-3">
         @if ($product->isEmpty())
             <div class="alert text-center" role="alert" style="background-color: #d4edda; color: #155724;">
-                Belum ada produk.
+                Belum ada <strong>produk</strong>.
             </div>
         @else
             <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
