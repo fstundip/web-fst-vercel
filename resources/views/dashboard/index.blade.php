@@ -19,7 +19,7 @@
                     <hr class="dropdown-divider">
                 </li>
                 <li>
-                    <form action="/logout" method="post">
+                    <form action="/admin/logout" method="post">
                         @csrf
                         <button type="submit" class="dropdown-item">Logout</button>
                     </form>
