@@ -77,6 +77,11 @@ nav .logo br {
     margin-left: 0 !important;
 }
 
+.dropdown-item:focus {
+    background-color: #d4edda;
+}
+
+
 nav .dropdown-menu a {
     color: #1f2d41 !important;
     font-weight: 400 !important;
