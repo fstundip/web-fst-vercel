@@ -40,7 +40,7 @@
                 @empty
                     <div class="alert text-center" role="alert" 
                         style="background-color: #d4edda; color: #155724;">
-                        Tunggu Kegiatan Kami Selanjutnya...
+                        Tunggu <strong>kegiatan</strong> kami selanjutnya...
                     </div>
                 @endforelse
             </div>
@@ -60,7 +60,7 @@
             <hr class="border border-success border-3" width="135px">
             @if ($report->isEmpty())
                 <div class="alert text-center" role="alert" style="background-color: #d4edda; color: #155724;">
-                    Belum ada report.
+                    Belum ada <strong>report</strong>.
                 </div>
             @else
                 <div class="row" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
