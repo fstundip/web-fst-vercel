@@ -28,7 +28,7 @@
         </li>
     </ul>
 </div>
-<div class="d-flex align-items-center justify-content-center py-5" style="height: 500px; background-color: #d4edda; color: #155724;">
+<div class="d-flex align-items-center justify-content-center py-5" style="height: 650px; background-color: #d4edda; color: #155724;">
     <div class="card shadow-lg rounded-4 p-4 text-center" style="max-width: 480px; width: 100%;">
         <h5 class="fw-bold mb-3">Version Control</h5>
         <p class="mb-3">Check this GitHub repository.</p>
