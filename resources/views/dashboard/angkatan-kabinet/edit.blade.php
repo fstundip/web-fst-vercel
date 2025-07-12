@@ -39,7 +39,7 @@
         @method('put')
         <div class="mb-3">
             <label for="tahun" class="form-label">Tahun</label>
-            <input type="integer" class="form-control" id="tahun" name="tahun" required value="{{ old('tahun', $angkatan->tahun) }}">
+            <input type="number" class="form-control" id="tahun" name="tahun" min="0" required value="{{ old('tahun', $angkatan->tahun) }}">
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

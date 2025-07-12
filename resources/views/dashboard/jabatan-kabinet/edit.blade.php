@@ -43,7 +43,7 @@
         </div>
         <div class="mb-3">
             <label for="level" class="form-label">Level</label>
-            <input type="integer" class="form-control" id="level" name="level" required value="{{ old('level', $jabatan->level) }}">
+            <input type="number" class="form-control" id="level" name="level" min="1" required value="{{ old('level', $jabatan->level) }}">
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

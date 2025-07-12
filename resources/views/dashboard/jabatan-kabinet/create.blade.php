@@ -42,7 +42,7 @@
         </div>
         <div class="mb-3">
             <label for="level" class="form-label">Level</label>
-            <input type="integer" class="form-control" id="level" name="level" required>
+            <input type="number" class="form-control" id="level" name="level" min="1" required>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>

@@ -38,7 +38,7 @@ class DashboardAngkatanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'tahun' => 'required'
+            'tahun' => 'required|integer|min:0'
         ]);
 
         $angkatan = new Angkatan;
@@ -67,7 +67,7 @@ class DashboardAngkatanController extends Controller
     {
         $angkatan = Angkatan::findOrFail($id);
         $rules = [
-            'tahun' => 'required'
+            'tahun' => 'required|integer|min:0'
         ];
 
         $validatedData = $request->validate($rules);

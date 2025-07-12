@@ -38,7 +38,7 @@
         @csrf
         <div class="mb-3">
             <label for="tahun" class="form-label">Tahun</label>
-            <input type="integer" class="form-control" id="tahun" name="tahun" required>
+            <input type="number" class="form-control" id="tahun" name="tahun" min="0" required>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
