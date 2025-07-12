@@ -21,7 +21,7 @@
     </div> -->
     <!-- NAVBAR  -->
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container" style="font-size: clamp(0.8rem, 1.5vw, 1rem);">
+        <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="/img/fst-warna.png" alt="" width="50px">
             </a>
