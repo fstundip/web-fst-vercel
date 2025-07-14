@@ -25,7 +25,7 @@
         @foreach ($anggotaByRows as $row)
             <div class="row justify-content-center mb-4">
                 @foreach ($row as $item)
-                    <div class="col-4 col-sm-4 col-md-3 col-lg-3 text-center text-dark mb-1">
+                    <div class="col-4 col-sm-4 col-md-3 col-lg-2 text-center text-dark mb-1">
                         <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
                             class="img-fluid mb-3"
                             style="aspect-ratio: 3 / 4; object-fit: cover; object-position: center top;">
