@@ -8,22 +8,25 @@ trait ConvertContentImageBase64ToUrl
 {
     protected function convertContentImageBase64ToUrl($content)
     {
-        $pattern = '/<img.*?src="(data:image\/(.*?);base64,.*?)".*?>/i';
-        preg_match_all($pattern, $content, $matches);
-        $gambarBase64 = $matches[1];
-        foreach ($gambarBase64 as $gambar) {
-            $data = explode(',', $gambar);
-            $gambarData = $data[1];
-            $mime = $data[0];
-            $finfo = finfo_open();
-            $ext = finfo_buffer($finfo, base64_decode($gambarData), FILEINFO_MIME_TYPE);
-            finfo_close($finfo);
-            $ext = explode('/', $ext)[1];
+        // Ambil semua tag <img> dengan src base64
+        $pattern = '/<img[^>]+src="data:image\/([^;]+);base64,([^"]+)"[^>]*>/i';
+        preg_match_all($pattern, $content, $matches, PREG_SET_ORDER);
 
-            $namaFile = uniqid() . '.' . $ext;
-            Storage::disk('public')->put($namaFile, base64_decode($gambarData));
-            $namaFile = "/storage/$namaFile";
-            $content = str_replace($gambar, $namaFile, $content);
+        foreach ($matches as $match) {
+            $extension = $match[1];         // Contoh: png
+            $base64Data = $match[2];        // Data base64 gambar
+            $fullBase64 = 'data:image/' . $extension . ';base64,' . $base64Data;
+
+            // Simpan gambar ke storage
+            $fileName = uniqid() . '.' . $extension;
+            Storage::disk('public')->put($fileName, base64_decode($base64Data));
+
+            // Ganti src base64 dengan path URL
+            $fileUrl = asset('storage/' . $fileName);
+            $newTag = str_replace($fullBase64, $fileUrl, $match[0]);
+
+            // Replace tag lama dengan tag baru
+            $content = str_replace($match[0], $newTag, $content);
         }
 
         return $content;
@@ -31,7 +34,7 @@ trait ConvertContentImageBase64ToUrl
 
     public function setAttribute($key, $value)
     {
-        if ($key === $this->contentName) {
+        if (isset($this->contentName) && $key === $this->contentName && is_string($value)) {
             $value = $this->convertContentImageBase64ToUrl($value);
         }
 
