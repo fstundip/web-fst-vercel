@@ -48,7 +48,7 @@ class DashboardReportController extends Controller
         ]);
 
         $image = $request->file('image');
-        $image->storeAs('public/report-images', $image->hashName());
+        $image->storeAs('report-images', $image->hashName());
 
         Report::create([
             'title' => $request->title,
@@ -87,11 +87,11 @@ class DashboardReportController extends Controller
 
         if ($request->file('image')) {
             if ($report->image) {
-                Storage::delete('public/' . $report->image);
+                Storage::delete($report->image);
             }
 
             $image = $request->file('image');
-            $image->storeAs('public/report-images', $image->hashName());
+            $image->storeAs('report-images', $image->hashName());
             $validatedData['image'] = 'report-images/' . $image->hashName();
         }
 
@@ -108,7 +108,7 @@ class DashboardReportController extends Controller
     {
         $report = Report::findOrFail($id);
         if ($report->image) {
-            Storage::delete('public/' . $report->image);
+            Storage::delete($report->image);
         }
         $report->delete();
 

@@ -59,7 +59,7 @@ class DashboardPostController extends Controller
         ]);
 
         $image = $request->file('image');
-        $image->storeAs('public/post-images', $image->hashName());
+        $image->storeAs('post-images', $image->hashName());
 
         Post::create([
             'title' => $request->title,
@@ -105,11 +105,11 @@ class DashboardPostController extends Controller
 
         if ($request->file('image')) {
             if ($post->image) {
-                Storage::delete('public/' . $post->image);
+                Storage::delete($post->image);
             }
 
             $image = $request->file('image');
-            $image->storeAs('public/post-images', $image->hashName());
+            $image->storeAs('post-images', $image->hashName());
             $validatedData['image'] = 'post-images/' . $image->hashName();
         }
 
@@ -127,7 +127,7 @@ class DashboardPostController extends Controller
     {
         $post = Post::findOrFail($id);
          if ($post->image) {
-            Storage::delete('public/' . $post->image);
+            Storage::delete($post->image);
         }
         $post->delete();
 

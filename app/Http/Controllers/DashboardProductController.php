@@ -50,7 +50,7 @@ class DashboardProductController extends Controller
         ]);
 
         $image = $request->file('image');
-        $image->storeAs('public/product-images', $image->hashName());
+        $image->storeAs('product-images', $image->hashName());
 
         Product::create([
             'name' => $request->name,
@@ -91,11 +91,11 @@ class DashboardProductController extends Controller
 
         if ($request->file('image')) {
             if ($product->image) {
-                Storage::delete('public/' . $product->image);
+                Storage::delete($product->image);
             }
 
             $image = $request->file('image');
-            $image->storeAs('public/product-images', $image->hashName());
+            $image->storeAs('product-images', $image->hashName());
             $validatedData['image'] = 'product-images/' . $image->hashName();
         }
 
@@ -112,7 +112,7 @@ class DashboardProductController extends Controller
     {
         $product = Product::findOrFail($id);
         if ($product->image) {
-            Storage::delete('public/' . $product->image);
+            Storage::delete($product->image);
         }
         $product->delete();
 

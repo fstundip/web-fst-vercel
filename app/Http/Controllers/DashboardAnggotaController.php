@@ -71,7 +71,7 @@ class DashboardAnggotaController extends Controller
         ]);
 
         $image = $request->file('image');
-        $image->storeAs('public/anggota-images', $image->hashName());
+        $image->storeAs('anggota-images', $image->hashName());
 
         Anggota::create([
             'name' => $request->name,
@@ -120,11 +120,11 @@ class DashboardAnggotaController extends Controller
 
         if ($request->file('image')) {
             if ($anggota->image) {
-                Storage::delete('public/' . $anggota->image);
+                Storage::delete($anggota->image);
             }
 
             $image = $request->file('image');
-            $image->storeAs('public/anggota-images', $image->hashName());
+            $image->storeAs('anggota-images', $image->hashName());
             $validatedData['image'] = 'anggota-images/' . $image->hashName();
         }
 
@@ -141,7 +141,7 @@ class DashboardAnggotaController extends Controller
     {
         $anggota = Anggota::findOrFail($id);
         if ($anggota->image) {
-            Storage::delete('public/' . $anggota->image);
+            Storage::delete($anggota->image);
         }
         $anggota->delete();
 
